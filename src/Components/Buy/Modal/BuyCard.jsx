@@ -17,7 +17,7 @@ export default function BuyCard({ children, cursorPos, animationId}) {
 
         window.addEventListener("resize", boxPosCalc);
         return () => window.removeEventListener("resize", boxPosCalc);
-    }, [])
+    })
 
     function cursorCalc(e) {
         let posX = e.pageX - boxPos[0];

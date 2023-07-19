@@ -11,6 +11,7 @@ export default function AdvantagesCard({text, children, cursorPos, animationId})
     let textRef = React.useRef();
 
     React.useEffect(() => {
+        setTextWidth(textRef.current.offsetWidth)
         function boxPosCalc() {
             let rect = ref.current.getBoundingClientRect();
             setBoxPos([rect.left, rect.top + window.pageYOffset, ref.current.offsetWidth])
@@ -19,11 +20,7 @@ export default function AdvantagesCard({text, children, cursorPos, animationId})
 
         window.addEventListener("resize", boxPosCalc);
         return () => window.removeEventListener("resize", boxPosCalc);
-    }, [])
-
-    React.useEffect(() => {
-        setTextWidth(textRef.current.offsetWidth)
-    }, [])
+    })
 
     function cursorCalc(e) {
         let posX = e.pageX - boxPos[0];

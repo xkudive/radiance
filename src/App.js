@@ -30,7 +30,7 @@ function App() {
 
     document.body.addEventListener("mousemove", cursorPosCalc)
     return () => document.body.removeEventListener("mousemove",cursorPosCalc)
-  }, [])
+  })
 
 
   return (

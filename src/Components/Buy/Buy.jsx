@@ -49,7 +49,7 @@ export default function Buy() {
     
         observer.observe(buyTopRef.current);
         observer.observe(buyCardsRef.current);
-    }, [])
+    })
 
     return(
         <div className="buy box">

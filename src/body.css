@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+	box-sizing: border-box;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	scroll-behavior: smooth;
+	scroll-margin-top: 75px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.preload * , .preload *::before, .preload *::after{
+	-webkit-animation: none !important;
+	-moz-animation: none !important;
+	-o-animation: none !important;
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+}
+
+:root {
+	color-scheme: dark;
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+body{
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	flex-direction: column;
+	background: #0E172B;
+}
+
+body[overflow="hidden"]{
+	overflow: hidden;
+}
+body[overflow="visible"]{
+	overflow: visible;
+}
+
+.box{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.container{
+	display: flex;
+	width: 1280px;
+	padding: 0 32px;
+}
+
+a{
+	text-decoration: none;
+    color: #fff;
+}
+
+li{
+	list-style-type: none;
+}
+
+@keyframes fadeIn {
+	from{
+		opacity: 0;
+	} to{
+		opacity: 1;
+	}
+}
+
+/* Radial Blur */
+
+.background-radial-blur{
+	backdrop-filter: blur(96px);
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	z-index: -3;
+	background: none;
+	overflow: hidden;
+}
+
+.screen-box{
+	z-index: -4;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.blob-box{
+	position: absolute;
+	transition: 2s cubic-bezier(0.27,0.94,0.48,1.01);
+}
+
+.blob{
+	transform: skew(5deg, 5deg);
+	opacity: 0.2;
+	width: 500px;
+	height: 500px;
+	background: linear-gradient(to right, aquamarine, mediumpurple);
+	border-radius: 9999px;
+	animation: blobRotate 20s linear infinite;
+}
+
+@keyframes blobRotate {
+	from{
+		rotate: 0deg;
+	} to{
+		rotate: 360deg;
+	}
+}
+
+.mobile-device{
+	display: flex;
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	background: #101010;
+	align-items: center;
+	justify-content: center;
+	padding: 32px;
+}
+
+.mobile-text{
+	text-align: center;
+	width: 600px;
+	max-width: 100%;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 600;
+
+}
+
+.mobile-text p:first-child{
+	margin-bottom: 32px;
+}

@@ -1,0 +1,226 @@
+.advantages{
+    margin-top: 120px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.advantages-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    position: relative;
+
+    &:hover{
+        .circle{
+            opacity: 1;
+        }
+    }
+
+    &.active {
+        .box-gradient{
+            animation: fadeIn 1s 0.75s ease forwards;
+        }
+        .advantages-title{
+            animation: fadeIn 1s 0.5s ease forwards;
+        }
+        .advantages-card{
+            animation: textReveal 0.8s 1s cubic-bezier(0.27,0.94,0.48,1.01) forwards;
+        }
+
+        .advantages-card[data-id="1"]{
+            animation-delay: 1s;
+        }
+        .advantages-card[data-id="2"]{
+            animation-delay: 1.15s;
+        }
+        .advantages-card[data-id="3"]{
+            animation-delay: 1.3s;
+        }
+        .advantages-card[data-id="4"]{
+            animation-delay: 1.45s;
+        }
+        .advantages-card[data-id="5"]{
+            animation-delay: 1.6s;
+        }
+    }
+}
+
+.advantages-card{
+    position: relative;
+    display: flex;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    height: 280px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
+
+    .circle, .inner-circle{
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1200px;
+        height: 1200px;
+        background: radial-gradient(600px at center, rgb(255, 255, 255), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .circle{
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(400px at center, rgba(255, 255, 255, 0.8), transparent 60%);
+    }
+}
+
+.advantages-card-inner{
+    position: relative;
+    display: flex;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: rgb(19, 19, 21);
+    border-radius: 12px;
+    padding: 24px;
+    overflow: hidden;
+    padding-top: 152px;
+
+    &:hover{
+        .inner-circle{
+            opacity: 0.06;
+        }
+
+        .advantages-background-text{
+            color: rgb(19, 19, 21);
+            opacity: 0.2;
+        }
+    }
+}
+
+.box-gradient{
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    overflow: visible;
+    inset: 0px;
+    z-index: 2;
+    opacity: 0;
+    
+    &:before{
+        --color-a:#8359e5;
+        --color-b:#8d9bed;
+        --color-c:#5dd8f7;
+
+        content: "";
+        position: absolute;
+        opacity: 0.1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateZ(0px);
+        width: calc(100vw - 50px);
+        height: 100vh;
+        filter: blur(80px);
+        background: radial-gradient( 
+                    400px circle at calc(100% - calc((100vw - 1280px) / 2) - 10%) 45%,
+                    var(--color-a), 70%, transparent ),
+                    radial-gradient(400px circle at 50% 55%,
+                    var(--color-b),60%,transparent),
+                    radial-gradient(350px circle at calc(calc((100vw - 1280px) / 2) + 15%) 40%,
+                    var(--color-c),60%,transparent);
+    }
+}
+
+.advantages-title{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    height: 100%;
+    opacity: 0;
+
+    padding: 24px;
+    h2{
+        font-size: 48px;
+        line-height: 115%;
+        letter-spacing: -0.5px;
+    }
+    p{
+        line-height: 150%;
+        color: #cbd5e1;
+    }
+}
+
+.advantages-background-text{
+    position: absolute;
+    font-size: 64px;
+    white-space: nowrap;
+    font-weight: 700;
+    background: linear-gradient(to right, #5dd8f7, #8d9bed);
+    opacity: 0.02;
+    top: 24px;
+    user-select: none;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.advantages-content{
+    display: flex;
+    align-items: flex-start;
+
+    img{
+        width: 20px;
+        margin-right: 12px;
+        margin-top: 4px;
+    }
+}
+
+.advantages-content-text{
+    h2{
+        line-height: 110%;
+        margin-bottom: 12px;
+    }
+
+    p{
+        color: #8a8f98;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .advantages-container{
+        max-width: 860px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 1080px) {
+    .advantages-card{
+        height: 240px;
+    }
+    .advantages-card-inner{
+        padding-top: 124px;
+    }
+    .advantages-content-text{
+        h2{
+            line-height: 110%;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+    
+        p{
+            color: #8a8f98;
+            font-size: 14px;
+            line-height: 150%;
+        }
+    }
+}

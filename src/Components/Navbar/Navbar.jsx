@@ -62,6 +62,18 @@ export default function Navbar() {
         if(activeTabTariff === 1) return "calc(100% / 3)";
         if(activeTabTariff === 2) return "calc(100% / 3 * 2)";
     }
+
+    function engTariff() {
+        if(activeTabTariff === 0) return <div><span>25$</span><span>/3 days</span></div>
+        if(activeTabTariff === 1) return <div><span>50$</span><span>/week</span></div>
+        if(activeTabTariff === 2) return <div><span>105$</span><span>/month</span></div>
+    }
+
+    function rusTariff() {
+        if(activeTabTariff === 0) return <div><span>2200₽</span><span>/3 days</span></div>
+        if(activeTabTariff === 1) return <div><span>4100₽</span><span>/week</span></div>
+        if(activeTabTariff === 2) return <div><span>9100₽</span><span>/month</span></div>
+    }
     
     return(
         <div className="navbar box">
@@ -196,7 +208,7 @@ export default function Navbar() {
                                             exit={{opacity: 0, transition:{duration: 0.2}}}
                                             key={[activeTabRegion, activeTabTariff]}>
                                                 {
-                                                    activeTabRegion === 0 ? (activeTabTariff === 0 ? <div><span>50$</span><span>/week</span></div> : <div><span>105$</span><span>/month</span></div> ) : (activeTabTariff === 0 ? <div><span>4100₽</span><span>/week</span></div>: <div><span>9100₽</span><span>/month</span></div>)
+                                                    activeTabRegion === 0 ? (engTariff()) : (rusTariff())
                                                 }
                                             </motion.span>
                                         </AnimatePresence>

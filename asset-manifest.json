@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/radiance/static/css/main.237c21f3.css",
-    "main.js": "/radiance/static/js/main.2a7ea913.js",
+    "main.css": "/radiance/static/css/main.e9a74b7b.css",
+    "main.js": "/radiance/static/js/main.425646ed.js",
     "static/media/otkis.gif": "/radiance/static/media/otkis.5b7fa3f629c2240fb445.gif",
     "static/media/hero_glow.webp": "/radiance/static/media/hero_glow.6bbe4c365184252740e5.webp",
     "static/media/unturned.webp": "/radiance/static/media/unturned.04d7f58d51290b515971.webp",
@@ -10,6 +10,7 @@
     "static/media/frequent_updates.svg": "/radiance/static/media/frequent_updates.1f9a2449d3c81979f37ce243094e4924.svg",
     "index.html": "/radiance/index.html",
     "static/media/premium_quality.svg": "/radiance/static/media/premium_quality.828e9f0b07a0919b2cc59ca485654c97.svg",
+    "static/media/star.svg": "/radiance/static/media/star.10211e95518039d4b93a2dc4ed3ed1ac.svg",
     "static/media/support.svg": "/radiance/static/media/support.aa70b6fdb0bfa98f3c86795eaf669149.svg",
     "static/media/highly_customizable.svg": "/radiance/static/media/highly_customizable.63ff11394dd224e4532d4c7a22ce6be6.svg",
     "static/media/cube.svg": "/radiance/static/media/cube.e46a60b84894037d959ffc00e41a846a.svg",
@@ -18,11 +19,11 @@
     "static/media/diamond.svg": "/radiance/static/media/diamond.293b491006126c81ea40d4537b1f55c4.svg",
     "static/media/modal_close.svg": "/radiance/static/media/modal_close.f9811153166663a279a443f6537b3097.svg",
     "static/media/lightning.svg": "/radiance/static/media/lightning.f771e92404956adfb4fbafbd1529896e.svg",
-    "main.237c21f3.css.map": "/radiance/static/css/main.237c21f3.css.map",
-    "main.2a7ea913.js.map": "/radiance/static/js/main.2a7ea913.js.map"
+    "main.e9a74b7b.css.map": "/radiance/static/css/main.e9a74b7b.css.map",
+    "main.425646ed.js.map": "/radiance/static/js/main.425646ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.237c21f3.css",
-    "static/js/main.2a7ea913.js"
+    "static/css/main.e9a74b7b.css",
+    "static/js/main.425646ed.js"
   ]
 }

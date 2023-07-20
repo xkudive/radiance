@@ -123,6 +123,18 @@
     display: flex;
     flex-direction: column;
     gap: 8px;  
+
+    &.tariff{
+        .content-options{
+            span{
+                width: calc(100% / 3);
+            }
+        
+            .active-indicator{
+                width: calc(100% / 3 - 4px);
+            }
+        }
+    }
 }
 
 .modal-content-title{

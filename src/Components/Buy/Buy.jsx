@@ -12,6 +12,7 @@ import lightning from "../../images/lightning.svg";
 import cube from "../../images/cube.svg";
 import modalClose from "../../images/modal_close.svg";
 import block from "../../images/block.svg";
+import star from "../../images/star.svg";
 
 export default function Buy() {
 
@@ -80,11 +81,11 @@ export default function Buy() {
                     <div className="box-gradient"></div>
                     <BuyCard cursorPos={mousePos}>
                         <div className="plan-image">
-                            <span><img src={diamond} alt="" /></span>
+                            <span><img src={star} alt="" /></span>
                         </div>
                         <div className="plan-title">
-                            <h2>Advanced</h2>
-                            <p>A long-time subscription. Destroy everyone in your path, become a real god of the game.</p>
+                            <h2>Lite</h2>
+                            <p>A short-time subscription. Perfect for getting familiar with the features.</p>
                             <div className="cost">
                                 <AnimatePresence initial={false}>
                                     <motion.span className="subscription-total-cost" transition={{duration: 0.4}} 
@@ -117,7 +118,7 @@ export default function Buy() {
                             <div className="plan-advantages-item">
                                 <span><img src={quality} alt="" /></span>
                                 <div className="plan-advantages-item-text">
-                                    <p className="plan-advantages-item-text-top">Exclusive functionality</p>
+                                    <p className="plan-advantages-item-text-top">Exclusive features</p>
                                     <p>Undeniable advantages in the game</p>
                                 </div>
                             </div>
@@ -144,7 +145,7 @@ export default function Buy() {
                         </div>
                         <div className="plan-title">
                             <h2>Basic</h2>
-                            <p>A short-time subscription. Perfect for getting familiar with the features.</p>
+                            <p>A medium-time subscription. The right decision to experience the best.</p>
                             <div className="cost">
                                 <AnimatePresence initial={false}>
                                     <motion.span className="subscription-total-cost" transition={{duration: 0.4}} 
@@ -177,7 +178,7 @@ export default function Buy() {
                             <div className="plan-advantages-item">
                                 <span><img src={quality} alt="" /></span>
                                 <div className="plan-advantages-item-text">
-                                    <p className="plan-advantages-item-text-top">Exclusive functionality</p>
+                                    <p className="plan-advantages-item-text-top">Exclusive features</p>
                                     <p>Undeniable advantages in the game</p>
                                 </div>
                             </div>
@@ -236,7 +237,7 @@ export default function Buy() {
                             <div className="plan-advantages-item">
                                 <span><img src={quality} alt="" /></span>
                                 <div className="plan-advantages-item-text">
-                                    <p className="plan-advantages-item-text-top">Exclusive functionality</p>
+                                    <p className="plan-advantages-item-text-top">Exclusive features</p>
                                     <p>Undeniable advantages in the game</p>
                                 </div>
                             </div>

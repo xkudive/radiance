@@ -56,6 +56,12 @@ export default function Navbar() {
     let closeAgreement = () => {
         setAgreementActive(false);
     }
+
+    function indicatorCalc() {
+        if(activeTabTariff === 0) return "4px";
+        if(activeTabTariff === 1) return "calc(100% / 3)";
+        if(activeTabTariff === 2) return "calc(100% / 3 * 2)";
+    }
     
     return(
         <div className="navbar box">
@@ -125,10 +131,11 @@ export default function Navbar() {
                                         <div className="modal-content tariff">
                                             <span className="modal-content-title">Tariff</span>
                                             <div className="content-options">
-                                                <span className={activeTabTariff === 0 ? "active" : ""} onClick={() => setActiveTabTariff(0)}>7 days</span>
-                                                <span className={activeTabTariff === 1 ? "active" : ""} onClick={() => setActiveTabTariff(1)}>30 days</span>
+                                                <span className={activeTabTariff === 0 ? "active" : ""} onClick={() => setActiveTabTariff(0)}>3 days</span>
+                                                <span className={activeTabTariff === 1 ? "active" : ""} onClick={() => setActiveTabTariff(1)}>7 days</span>
+                                                <span className={activeTabTariff === 2 ? "active" : ""} onClick={() => setActiveTabTariff(2)}>30 days</span>
 
-                                                <div className="active-indicator" style={activeTabTariff === 0 ? {left : "4px"} : {left: "50%"}}></div>
+                                                <div className="active-indicator" style={{left: `${indicatorCalc()}`}}></div>
                                             </div>
                                         </div>
                                     

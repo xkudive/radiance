@@ -440,6 +440,16 @@
             left: 50%;
         }
     }
+
+    &.tariff{
+        span{
+            width: calc(100% / 3);
+        }
+
+        .active-indicator{
+            width: calc(100% / 3 - 4px);
+        }
+    }
 }
 
 .active-indicator{

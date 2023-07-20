@@ -15,7 +15,7 @@ export default function Hero() {
     const draggableBox = React.useRef();
 
     let [bgVideoLoaded, setBgVideoLoaded] = React.useState(false);
-    let [inputText, setInputText] = React.useState((localStorage.getItem("Guest") || "User")+"!");
+    let [inputText, setInputText] = React.useState((localStorage.getItem("Guest") || "dadaya")+"!");
     let [draggable, setDraggable] = React.useState(false);
     let [subscription, setSubscription] = React.useState(1);
     let [toggleAdditions, setToggleAdditions] = React.useState(false);

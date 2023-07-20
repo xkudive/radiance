@@ -259,6 +259,7 @@
 }
 
 .cheat-exe-container{
+    z-index: 880;
     opacity: 0;
     animation: cheatReveal 1s 1.9s cubic-bezier(0.27,0.94,0.48,1.01) forwards;
 }

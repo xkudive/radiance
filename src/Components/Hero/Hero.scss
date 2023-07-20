@@ -424,6 +424,21 @@
     &.status span{
         cursor: default;
     }
+
+    &.undetected{
+        span:nth-child(1){
+            color: #659fdc;
+        }
+    }
+
+    &.detected{
+        span:nth-child(2){
+            color: #a04b4b;
+        }
+        .active-indicator{
+            left: 50%;
+        }
+    }
 }
 
 .active-indicator{
@@ -452,7 +467,7 @@
     transition: 0.3s ease;
 
     &:hover{
-        background: rgb(31, 30, 36);
+        background: #303134;
     }
 }
 

@@ -224,15 +224,15 @@ export default function Hero() {
 
                             <div className="main-menu-content">
                                 <span className="main-menu-title">Status</span>
-                                <div className="content-options status">
-                                    <span style={{color: "#fff"}}>Undetected</span>
+                                <div className="content-options status undetected">
+                                    <span>Undetected</span>
                                     <span>Detected</span>
 
                                     <div className="active-indicator"></div>
                                 </div>
                             </div>
 
-                            <a href="#" className="inject-button">Buy Radiance</a>
+                            <a href="https://radianceproject.mysellix.io/" target="_blank" className="inject-button">Inject</a>
                         </div>
 
                     </motion.div>

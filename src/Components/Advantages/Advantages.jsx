@@ -26,7 +26,7 @@ export default function Advantages(){
         }, {threshold: 0.3})
     
         observer.observe(advantagesBox.current);
-    })
+    }, [])
 
     let [mousePos, setMousePos] = React.useState([0, 0]);
     function cursorCalc(e) {

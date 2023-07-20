@@ -11,16 +11,15 @@ export default function AdvantagesCard({text, children, cursorPos, animationId})
     let textRef = React.useRef();
 
     React.useEffect(() => {
-        setTextWidth(textRef.current.offsetWidth)
         function boxPosCalc() {
             let rect = ref.current.getBoundingClientRect();
             setBoxPos([rect.left, rect.top + window.pageYOffset, ref.current.offsetWidth])
         }
         boxPosCalc()
-
+        setTimeout(() => setTextWidth(textRef.current.offsetWidth), 100)
         window.addEventListener("resize", boxPosCalc);
         return () => window.removeEventListener("resize", boxPosCalc);
-    })
+    }, [])
 
     function cursorCalc(e) {
         let posX = e.pageX - boxPos[0];
@@ -38,7 +37,18 @@ export default function AdvantagesCard({text, children, cursorPos, animationId})
     })
 
     return(
-        <motion.div className="advantages-card" data-id={animationId} onMouseMove={(e) => cursorCalc(e)} onMouseOver={(e) => cursorCalc(e)} onHoverEnd={() => setTimeout(() => {setMousePos([0,0])}, 500)}  ref={ref}>
+        <motion.div className="advantages-card" 
+            data-id={animationId} 
+            onMouseMove={(e) => cursorCalc(e)} 
+            onMouseOver={(e) => cursorCalc(e)} 
+            onHoverEnd={() => {
+                setTimeout(() => {
+                    setMousePos([0,0])
+                }, 500)
+            }}  
+            ref={ref}
+        >
+
             <div className="circle" style={{transform: `translate(${cursorPos[0]-boxPos[0]-400}px , ${cursorPos[1]-boxPos[1]-400}px)`}}></div>
             <div className="advantages-card-inner">
                 <div className="inner-circle" style={{transform: `translate(${mousePos[0]-600}px , ${mousePos[1]-600}px)`}}></div>

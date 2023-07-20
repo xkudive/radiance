@@ -13,11 +13,11 @@ export default function BuyCard({ children, cursorPos, animationId}) {
             let rect = ref.current.getBoundingClientRect();
             setBoxPos([rect.left, rect.top + window.pageYOffset, ref.current.offsetWidth])
         }
-        boxPosCalc()
+        setTimeout(() => boxPosCalc(), 500)
 
         window.addEventListener("resize", boxPosCalc);
         return () => window.removeEventListener("resize", boxPosCalc);
-    })
+    }, [])
 
     function cursorCalc(e) {
         let posX = e.pageX - boxPos[0];

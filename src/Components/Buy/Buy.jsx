@@ -80,6 +80,65 @@ export default function Buy() {
                     <div className="box-gradient"></div>
                     <BuyCard cursorPos={mousePos}>
                         <div className="plan-image">
+                            <span><img src={diamond} alt="" /></span>
+                        </div>
+                        <div className="plan-title">
+                            <h2>Advanced</h2>
+                            <p>A long-time subscription. Destroy everyone in your path, become a real god of the game.</p>
+                            <div className="cost">
+                                <AnimatePresence initial={false}>
+                                    <motion.span className="subscription-total-cost" transition={{duration: 0.4}} 
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1, transition: {duration: 0.2, delay: 0.2}}}
+                                    exit={{opacity: 0, transition:{duration: 0.2}}}
+                                    key={[activeTabRegion]}>
+                                        {
+                                            activeTabRegion === 0 ?  <div><span>25$</span><span>/3 days</span></div> : <div><span>2200₽</span><span>/3 days</span></div>
+                                        }
+                                    </motion.span>
+                                </AnimatePresence>
+                            </div>
+                        </div>
+                        <div className="plan-advantages">
+                            <div className="plan-advantages-item">
+                                <span><img src={cube} alt="" /></span>
+                                <div className="plan-advantages-item-text">
+                                    <p className="plan-advantages-item-text-top">Extensive functionality</p>
+                                    <p>Access to all features</p>
+                                </div>
+                            </div>
+                            <div className="plan-advantages-item">
+                                <span><img src={support} alt="" /></span>
+                                <div className="plan-advantages-item-text">
+                                    <p className="plan-advantages-item-text-top">Brilliant support</p>
+                                    <p>Quick support assistance</p>
+                                </div>
+                            </div>
+                            <div className="plan-advantages-item">
+                                <span><img src={quality} alt="" /></span>
+                                <div className="plan-advantages-item-text">
+                                    <p className="plan-advantages-item-text-top">Exclusive functionality</p>
+                                    <p>Undeniable advantages in the game</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://radianceproject.mysellix.io/en/" target="_blank" className="plan-buy-button" onClick={(e) => {
+                            if(checkboxActive === true) return;
+                            if(popupActive === true) {
+                                e.preventDefault();
+                                return;
+                            }
+                            if(checkboxActive === false) {
+                                e.preventDefault();
+                                setPopupActive(true)
+                                setTimeout(() => {
+                                    setPopupActive(false)
+                                }, 3000)
+                            }
+                        }}>Buy Subscription</a>
+                    </BuyCard>
+                    <BuyCard cursorPos={mousePos}>
+                        <div className="plan-image">
                             <span><img src={lightning} alt="" /></span>
                             <div className="most-popular">Most popular</div>
                         </div>

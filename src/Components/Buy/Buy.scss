@@ -34,7 +34,8 @@
 }
 
 .buy-cards-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     position: relative;
     gap: 16px;
 
@@ -66,11 +67,14 @@
         .buy-card:nth-child(3){
             animation-delay: 1.1s;
         }
+        .buy-card:nth-child(4){
+            animation-delay: 1.2s;
+        }
     }
 }
 
 .buy-card{
-    width: 390px;
+    width: 100%;
     position: relative;
     display: flex;
     border-radius: 16px;

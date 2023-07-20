@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useMotionValue, AnimatePresence } from
 import "./Hero.scss"
 
 import heroGlow from "../../images/hero_glow.webp";
-import cheatImg from "../../images/franzj.gif";
+import cheatImg from "../../images/otkis.gif";
 import dots from "../../images/3-dots.svg";
 import logo from "../../images/logo.png";
 

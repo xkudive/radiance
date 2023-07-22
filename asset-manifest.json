@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/radiance/static/css/main.0582e729.css",
-    "main.js": "/radiance/static/js/main.912b9a06.js",
+    "main.css": "/radiance/static/css/main.1cb99f45.css",
+    "main.js": "/radiance/static/js/main.dd2aab6e.js",
     "static/media/otkis.gif": "/radiance/static/media/otkis.5b7fa3f629c2240fb445.gif",
     "static/media/hero_glow.webp": "/radiance/static/media/hero_glow.6bbe4c365184252740e5.webp",
     "static/media/unturned.webp": "/radiance/static/media/unturned.04d7f58d51290b515971.webp",
+    "static/media/mama.png": "/radiance/static/media/mama.2a539e1fe246c6caee09.png",
     "static/media/rust.webp": "/radiance/static/media/rust.64c2c6e43fd7b7ff5d5e.webp",
     "static/media/trust.svg": "/radiance/static/media/trust.3c4b4d3496d4a836c8776ceff658cc79.svg",
     "static/media/frequent_updates.svg": "/radiance/static/media/frequent_updates.1f9a2449d3c81979f37ce243094e4924.svg",
@@ -19,11 +20,11 @@
     "static/media/diamond.svg": "/radiance/static/media/diamond.293b491006126c81ea40d4537b1f55c4.svg",
     "static/media/modal_close.svg": "/radiance/static/media/modal_close.f9811153166663a279a443f6537b3097.svg",
     "static/media/lightning.svg": "/radiance/static/media/lightning.f771e92404956adfb4fbafbd1529896e.svg",
-    "main.0582e729.css.map": "/radiance/static/css/main.0582e729.css.map",
-    "main.912b9a06.js.map": "/radiance/static/js/main.912b9a06.js.map"
+    "main.1cb99f45.css.map": "/radiance/static/css/main.1cb99f45.css.map",
+    "main.dd2aab6e.js.map": "/radiance/static/js/main.dd2aab6e.js.map"
   },
   "entrypoints": [
-    "static/css/main.0582e729.css",
-    "static/js/main.912b9a06.js"
+    "static/css/main.1cb99f45.css",
+    "static/js/main.dd2aab6e.js"
   ]
 }

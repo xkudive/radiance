@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 
@@ -14,6 +14,16 @@ const App = () => {
 
   let location = useLocation();
   let [device, setDevice] = React.useState(true);
+  let [cursorPos, setCursorPos] = React.useState([500,500]);
+    
+  React.useEffect(() => {
+    function cursorPosCalc(e) {
+      setCursorPos([e.clientX, e.clientY])
+    }
+
+    document.body.addEventListener("mousemove", cursorPosCalc)
+    return () => document.body.removeEventListener("mousemove",cursorPosCalc)
+  });
 
     React.useEffect(() => { 
         function deviceWidth() {
@@ -30,6 +40,13 @@ const App = () => {
 
     <>
       <Navbar />
+        <div className="background-radial-blur"></div>
+          
+            <div className="screen-box">
+                <div className="blob-box" style={{transform: `translate(${cursorPos[0]-250}px, ${cursorPos[1]-250}px)`}}>
+                  <div className="blob"></div>
+                </div>
+            </div>
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

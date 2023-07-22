@@ -97,7 +97,7 @@ li{
 
 .blob-box{
 	position: absolute;
-	transition: 2s cubic-bezier(0.27,0.94,0.48,1.01);
+	transition: 1s cubic-bezier(0.27,0.94,0.48,1.01);
 }
 
 .blob{

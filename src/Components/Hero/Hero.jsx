@@ -1,5 +1,6 @@
 import React from "react";
-import { motion, useScroll, useTransform, useMotionValue, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import "./Hero.scss"
 
@@ -57,27 +58,27 @@ export default function Hero() {
 
                 <div className="hero-bg-img-box">
                     <img src={heroGlow} alt="" />
-                </div>                    
-                <motion.div
-                    initial={{opacity: 0.99}}
-                    className="hero-bg-video-box"
-                    style={{translateY: parallax, opacity: opacity}}
-                >
-                    <div className={`hero-video ${bgVideoLoaded ? " opacity" : ""}`} onLoad={() => setBgVideoLoaded(true)} style={{padding:"0 0 0 0", position:"relative"}}>
-                        <iframe src="https://player.vimeo.com/video/843429337?dnt=1&amp;loop=1&amp;background=1&amp;app_id=58479" 
-                        frameBorder="0" allow="autoplay;"
-                        style={{position:"relative",
-                                    top:"0",
-                                    left:"0",
-                                    width:"100%",
-                                    height:"100%"}} 
-                        title="dadaya pidr xkudive"
-                        ref={bgVideoRef}
-                        onLoad={videoFade}
-                        >
-                        </iframe>
-                    </div>
-                </motion.div>
+                </div>
+                    <motion.div
+                        initial={{opacity: 0.99}}
+                        className="hero-bg-video-box"
+                        style={{translateY: parallax, opacity: opacity}}
+                    >
+                        <div className={`hero-video ${bgVideoLoaded ? " opacity" : ""}`} onLoad={() => setBgVideoLoaded(true)} style={{padding:"0 0 0 0", position:"relative"}}>
+                            <iframe src="https://player.vimeo.com/video/843429337?dnt=1&amp;loop=1&amp;background=1&amp;app_id=58479" 
+                            frameBorder="0" allow="autoplay;"
+                            style={{position:"relative",
+                                        top:"0",
+                                        left:"0",
+                                        width:"100%",
+                                        height:"100%"}} 
+                            title="dadaya pidr xkudive"
+                            ref={bgVideoRef}
+                            onLoad={videoFade}
+                            >
+                            </iframe>
+                        </div>
+                    </motion.div>                   
                 <div className="hero-container-content">
 
                 <motion.div 
@@ -239,7 +240,7 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <a href="https://radianceproject.mysellix.io/" target="_blank" className="inject-button">Inject</a>
+                            <Link to="/rust" className="inject-button">View Product</Link>
                         </div>
 
                     </motion.div>

@@ -1,5 +1,5 @@
 import React from "react";
-import {motion, AnimatePresence, useTransform, useSpring, MotionConfig, delay } from "framer-motion"
+import {motion, AnimatePresence} from "framer-motion"
 
 import Backdrop from "../Navbar/modals/Backdrop";
 import BuyCard from "./Modal/BuyCard";
@@ -14,7 +14,7 @@ import modalClose from "../../images/modal_close.svg";
 import block from "../../images/block.svg";
 import star from "../../images/star.svg";
 
-export default function Buy() {
+export default function Buy({newRender}) {
 
     let buyTopRef = React.useRef();
     let buyCardsRef = React.useRef();
@@ -50,10 +50,10 @@ export default function Buy() {
     
         observer.observe(buyTopRef.current);
         observer.observe(buyCardsRef.current);
-    }, [])
+    })
 
     return(
-        <div className="buy box">
+        <div className="buy box" id="rust-prices">
             <div className="container">
                 <div className="buy-top-content" ref={buyTopRef}>
                     <h2>Subscription</h2>
@@ -79,7 +79,7 @@ export default function Buy() {
                 </div>
                 <div className="buy-cards-container" ref={buyCardsRef} onMouseMove={(e) => cursorCalc(e)}>
                     <div className="box-gradient"></div>
-                    <BuyCard cursorPos={mousePos}>
+                    <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
                         <div className="plan-image">
                             <span><img src={star} alt="" /></span>
                         </div>
@@ -137,8 +137,8 @@ export default function Buy() {
                                 }, 3000)
                             }
                         }}>Buy Subscription</a>
-                    </BuyCard>
-                    <BuyCard cursorPos={mousePos}>
+                    </BuyCard>                   
+                    <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
                         <div className="plan-image">
                             <span><img src={lightning} alt="" /></span>
                             <div className="most-popular">Most popular</div>
@@ -198,13 +198,13 @@ export default function Buy() {
                             }
                         }}>Buy Subscription</a>
                     </BuyCard>
-                    <BuyCard cursorPos={mousePos}>
+                    <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
                         <div className="plan-image">
                             <span><img src={diamond} alt="" /></span>
                         </div>
                         <div className="plan-title">
                             <h2>Advanced</h2>
-                            <p>A long-time subscription. Destroy everyone in your path, become a real god of the game.</p>
+                            <p>A long-time subscription. Destroy everyone, become a real god of the game.</p>
                             <div className="cost">
                                 <AnimatePresence initial={false}>
                                     <motion.span className="subscription-total-cost" transition={{duration: 0.4}} 

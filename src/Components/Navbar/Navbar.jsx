@@ -1,5 +1,6 @@
 import React from "react";
 import {motion, AnimatePresence, useTransform, useSpring, MotionConfig, delay } from "framer-motion"
+import { Link } from "react-router-dom";
 
 import Backdrop from "./modals/Backdrop";
 import Modal from "./modals/Modal";
@@ -98,7 +99,7 @@ export default function Navbar() {
                                             A private cheat for rust will let you win on the battlefield and get the taste of victory!
                                             </p>
 
-                                            <a href="#">View Product</a>
+                                            <Link to="/rust" onClick={close}>View Product</Link>
                                         </div>
                                     </ModalCard>
                                     <ModalCard cursorPos={[cursorX, cursorY]}>
@@ -267,7 +268,10 @@ export default function Navbar() {
                     }
                 </AnimatePresence>
 
-                <a href="#" className="navbar-logo"><img src={logo} alt="" /></a>
+                <Link to="/" className="navbar-logo" onClick={() => {
+                    close();
+                    closeSubscription();
+                }}><img src={logo} alt="" /></Link>
                 <ul className="navbar-ul">
                     <a className={`navbar-ul-a modal${modalOpen ? " clicked" : ""}`} href="#" onClick={() => modalOpen ? close() : open()}>
                         <li>Our Products</li>

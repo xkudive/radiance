@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion"
 
-export default function BuyCard({ children, cursorPos, animationId}) {
+export default function BuyCard({ children, cursorPos, animationId, updateBoxValues}) {
 
     let [boxPos, setBoxPos] = React.useState([0, 0, 0]);
     let [mousePos, setMousePos] = React.useState([0, 0]);
@@ -17,7 +17,7 @@ export default function BuyCard({ children, cursorPos, animationId}) {
 
         window.addEventListener("resize", boxPosCalc);
         return () => window.removeEventListener("resize", boxPosCalc);
-    }, [])
+    },[updateBoxValues])
 
     function cursorCalc(e) {
         let posX = e.pageX - boxPos[0];

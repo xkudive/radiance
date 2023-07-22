@@ -1,5 +1,6 @@
 import React from "react";
 import {motion, AnimatePresence, useTransform, useSpring, MotionConfig, delay } from "framer-motion"
+import { Link } from "react-router-dom";
 
 import Backdrop from "../Navbar/modals/Backdrop";
 import "./Footer.scss";
@@ -46,7 +47,7 @@ export default function Footer(){
                     <div className="footer-right">
                         <ul className="footer-right-ul">
                             <li className="footer-ul-title">Navigation</li>
-                            <a href="#"><li>Home</li></a>
+                            <Link to="/"><li>Home</li></Link>
                             <a href="https://discord.com/invite/radianceproject/" target="_blank"><li>Support</li></a>
                             <motion.a onClick={(e) => {
                                 e.preventDefault();
@@ -56,8 +57,8 @@ export default function Footer(){
                         </ul>
                         <ul className="footer-right-ul">
                             <li className="footer-ul-title">Our Products</li>
-                            <a href=""><li>Rust Radiance</li></a>
-                            <a href="#"><li>Coming Soon...</li></a>
+                            <Link to="/rust"><li>Rust Radiance</li></Link>
+                            <a><li>Coming Soon...</li></a>
                         </ul>
                         <ul className="footer-right-ul">
                             <li className="footer-ul-title">Media</li>

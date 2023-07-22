@@ -1,65 +1,55 @@
 import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 
-import "./body.css"
-
-import Navbar from "./Components/Navbar/Navbar"
-import Hero from "./Components/Hero/Hero"
-import Advantages from "./Components/Advantages/Advantages";
-import Buy from "./Components/Buy/Buy";
+import { AnimatePresence } from "framer-motion";
+import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 
+import "./body.css";
 
-function App() {
+import Main from "./Pages/Main"
+import Rust from "./Pages/Rust";
 
-  let [cursorPos, setCursorPos] = React.useState([500,500]);
-  let [device, setDevice] = React.useState(0);
+const App = () => {
 
-  React.useEffect(() => {
-    function deviceWidth() {
-      setDevice(document.body.clientWidth)
-    }
-    deviceWidth()
-    window.addEventListener("resize", deviceWidth)
-    return () => document.body.removeEventListener("mousemove", deviceWidth)
-  })
+  let location = useLocation();
+  let [device, setDevice] = React.useState(true);
 
-  React.useEffect(() => {
-    function cursorPosCalc(e) {
-      setCursorPos([e.clientX, e.clientY])
-    }
-
-    document.body.addEventListener("mousemove", cursorPosCalc)
-    return () => document.body.removeEventListener("mousemove",cursorPosCalc)
-  })
-
+    React.useEffect(() => { 
+        function deviceWidth() {
+            let width = document.body.clientWidth;
+            width > 860 ? setDevice(true) : setDevice(false)
+        }
+        deviceWidth()
+        window.addEventListener("resize", deviceWidth)
+        return () => document.body.removeEventListener("mousemove", deviceWidth)
+    })
 
   return (
-    device > 860 
-    ? 
+    device ? 
+
     <>
-      <div className="background-radial-blur"></div>
-      
-      <div className="screen-box">
-        <div className="blob-box" style={{transform: `translate(${cursorPos[0]-250}px, ${cursorPos[1]-250}px)`}}>
-          <div className="blob"></div>
-        </div>
-      </div>
-
       <Navbar />
-      <Hero />
-      <Advantages />
-      <Buy />
-      <Footer />
 
-    </> 
-    : 
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Main />} />
+          <Route path="/rust" element={<Rust />} />
+          <Route path="*" element={<Main />} />
+        </Routes>
+      </AnimatePresence>
+      <Footer />
+    </>
+
+    :
+
     <div className="mobile-device">
-      <div className="mobile-text">
-        <p>WHOOPS! IT LOOKS LIKE YOU'RE ON A MOBILE DEVICE. THE SITE IS DESIGNED TO WORK ITS MAGIC ONLY ON DESKTOP DEVICE, AT THIS POINT.</p>
-        <p>NO HARD FEELINGS, JUST SWITCH OVER FOR BETTER EXPERIENCE.</p>
-      </div>
+        <div className="mobile-text">
+          <p>WHOOPS! IT LOOKS LIKE YOU'RE ON A MOBILE DEVICE. THE SITE IS DESIGNED TO WORK ITS MAGIC ONLY ON DESKTOP DEVICE, AT THIS POINT.</p>
+          <p>NO HARD FEELINGS, JUST SWITCH OVER FOR BETTER EXPERIENCE.</p>
+        </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

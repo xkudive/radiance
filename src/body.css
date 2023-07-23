@@ -161,3 +161,7 @@ li{
 	pointer-events: none;
 	user-select: none;
 }
+
+.rustPage .buy{
+	margin-top: 160px;
+}

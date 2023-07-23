@@ -5,8 +5,10 @@ import "./FeaturesRust.scss";
 
 export default function FeaturesRust({rerenderValue}) {
 
+    let featuresRustRef = React.useRef();
     let featureContentRef = React.useRef();
     let [height, setHeight] = React.useState(0);
+    let [showToggle, setShowToggle] = React.useState(true);
 
     React.useEffect(() => {
         function getShowHeight(){
@@ -19,17 +21,29 @@ export default function FeaturesRust({rerenderValue}) {
         return () => window.removeEventListener("resize", getShowHeight);
     }, [])
 
-    let [showToggle, setShowToggle] = React.useState(true);
-
+    React.useEffect(() => {
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting === true) {
+                    let classList = entry.target.className;
+                    let newClassName = classList.replaceAll(" active", "");
+                    entry.target.className = newClassName + " active";
+                    observer.unobserve(entry.target);
+                }
+            })  
+        }, {threshold: 0.3})
+        
+        observer.observe(featuresRustRef.current)
+    }, [])
 
     return(
         <div className="features-rust box">
-            <div className="container" style={{maxHeight: `${showToggle ? "320px" : height+"px"}`}}>
+            <div className="container" style={{maxHeight: `${showToggle ? "320px" : height+"px"}`}} ref={featuresRustRef}>
                 <div className="features-title">
                     Functionalty
                 </div>
                 <div className="feature-content-container" ref={featureContentRef}>
-                    <div className="feature-content-box">
+                    <div className="feature-content-box" id-animation="1">
                         <div className="feature-content-title">
                             Aim
                         </div>
@@ -81,7 +95,7 @@ export default function FeaturesRust({rerenderValue}) {
                             })}
                         </div>    
                     </div>
-                    <div className="feature-content-box">
+                    <div className="feature-content-box" id-animation="2">
                         <div className="feature-content-title">
                             Weapon
                         </div>
@@ -128,7 +142,7 @@ export default function FeaturesRust({rerenderValue}) {
                             })}
                         </div>    
                     </div>
-                    <div className="feature-content-box">
+                    <div className="feature-content-box" id-animation="3">
                         <div className="feature-content-title">
                             Visuals
                         </div>
@@ -162,7 +176,7 @@ export default function FeaturesRust({rerenderValue}) {
                             })}
                         </div>    
                     </div>
-                    <div className="feature-content-box">
+                    <div className="feature-content-box" id-animation="4">
                         <div className="feature-content-title">
                             World Esp
                         </div>
@@ -199,7 +213,7 @@ export default function FeaturesRust({rerenderValue}) {
                             })}
                         </div>    
                     </div>
-                    <div className="feature-content-box">
+                    <div className="feature-content-box" id-animation="5">
                         <div className="feature-content-title">
                             Settings
                         </div>

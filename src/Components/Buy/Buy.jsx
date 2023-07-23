@@ -50,7 +50,7 @@ export default function Buy({newRender}) {
     
         observer.observe(buyTopRef.current);
         observer.observe(buyCardsRef.current);
-    })
+    }, [])
 
     return(
         <div className="buy box" id="rust-prices">

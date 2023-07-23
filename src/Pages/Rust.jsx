@@ -6,13 +6,14 @@ import HeroRust from "../ComponentsRust/HeroRust/HeroRust";
 import MediaRust from "../ComponentsRust/MediaRust/MediaRust";
 import FeaturesRust from "../ComponentsRust/FeaturesRust/FeaturesRust";
 
+
 import logo from "../images/mama.png";
 
 export default function Rust() {
     let [rerenderBuy, setRerenderBuy] = React.useState(0);
 
     return (
-        <>
+        <div className="rustPage">
             <HeroRust />
             <MediaRust />
             <FeaturesRust rerenderValue={() => setRerenderBuy((rerenderBuy) => rerenderBuy + 1)} />
@@ -48,6 +49,6 @@ export default function Rust() {
                     src={logo} alt="" 
                 ></motion.img>
           </motion.div>
-        </>
+        </div>
     )
 }

@@ -9,7 +9,7 @@ export default function HeroRust(){
 
     let [link, setLink] = React.useState("");
 
-    let apiKey = "AIzaSyD1y9EQcKw1Xo99uLjYsZEohBc4v3yBJ3I";
+    let apiKey = "AIzaSyBv8OWiKE_opKlWQ50GxBhQljoZkXuLnV0";
     let channelId = "UCdUvCzypuYbsAaJEMyOLPyQ";
 
     React.useEffect(() => {
@@ -20,6 +20,7 @@ export default function HeroRust(){
         }
         getVideoLink()
     }, [])
+
 
     return(
         <div className="hero-rust box">

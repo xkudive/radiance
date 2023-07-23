@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/radiance/static/css/main.b048051b.css",
-    "main.js": "/radiance/static/js/main.0c9fb533.js",
+    "main.css": "/radiance/static/css/main.48d32b9d.css",
+    "main.js": "/radiance/static/js/main.e853d4d1.js",
     "static/media/otkis.gif": "/radiance/static/media/otkis.5b7fa3f629c2240fb445.gif",
     "static/media/hero_glow.webp": "/radiance/static/media/hero_glow.6bbe4c365184252740e5.webp",
     "static/media/unturned.webp": "/radiance/static/media/unturned.04d7f58d51290b515971.webp",
@@ -25,11 +25,11 @@
     "static/media/diamond.svg": "/radiance/static/media/diamond.293b491006126c81ea40d4537b1f55c4.svg",
     "static/media/modal_close.svg": "/radiance/static/media/modal_close.f9811153166663a279a443f6537b3097.svg",
     "static/media/lightning.svg": "/radiance/static/media/lightning.f771e92404956adfb4fbafbd1529896e.svg",
-    "main.b048051b.css.map": "/radiance/static/css/main.b048051b.css.map",
-    "main.0c9fb533.js.map": "/radiance/static/js/main.0c9fb533.js.map"
+    "main.48d32b9d.css.map": "/radiance/static/css/main.48d32b9d.css.map",
+    "main.e853d4d1.js.map": "/radiance/static/js/main.e853d4d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.b048051b.css",
-    "static/js/main.0c9fb533.js"
+    "static/css/main.48d32b9d.css",
+    "static/js/main.e853d4d1.js"
   ]
 }

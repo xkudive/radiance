@@ -38,6 +38,15 @@
                 &[id-animation="5"]{
                     animation-delay: 1.5s;
                 }
+                &[id-animation="6"]{
+                    animation-delay: 1.65s;
+                }
+                &[id-animation="7"]{
+                    animation-delay: 1.8s;
+                }
+                &[id-animation="8"]{
+                    animation-delay: 1.95s;
+                }
             }
             .media-slider-indicator{
                 animation: fadeIn 1s 1.5s forwards;
@@ -97,6 +106,7 @@
         width: 100%;
         align-self: flex-start;
         object-fit: cover;
+        border-radius: 8px;
     }
 }
 
@@ -140,6 +150,16 @@
     translate:0 -50%;
     cursor: pointer;
     user-select: none;
+
+    path{
+        transition: 0.3s ease;
+    }
+    
+    &:hover{
+        path{
+            fill: #888888;
+        }
+    }
     
     &.gallery-button-left{
         left: 24px;
@@ -163,13 +183,14 @@
     height: 640px;
     max-height: 80%;
     display: flex;
+    border-radius: 16px;
+    overflow: hidden;
     user-select: none;
-
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
 
     img{
-        object-fit: contain;
-        user-select: none;
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
+        object-fit: cover;
+        user-select: none;        
     }
 }
 
@@ -187,4 +208,14 @@
     span{
         line-height: 90%;
     }
+}
+
+.gallery-modal-close{
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 36px;
+    right: 24px;
+    display: flex;
 }

@@ -344,6 +344,11 @@
     align-items: center;
     justify-content: space-between;
     background: #303134;
+    cursor: grab;
+
+    &:active{
+        cursor: grabbing;
+    }
 }
 
 .cheat-label{
@@ -376,6 +381,7 @@
         width: 45px;
         height: 100%;
         transition: 0.3s ease;
+        cursor: default;
 
         &:hover{
             background: #555555;
@@ -487,7 +493,7 @@
     flex-direction: column;
     gap: 8px;
 
-    &.subscription{
+    &.tariff{
         cursor: pointer;
         padding-bottom: 8px;
 

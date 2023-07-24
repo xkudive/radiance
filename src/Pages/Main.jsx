@@ -10,7 +10,7 @@ import logo from "../images/mama.png";
 export default function Main() {
 
     return (
-        <>
+        <div className="main">
 
           <Hero />
           <Advantages />
@@ -47,6 +47,6 @@ export default function Main() {
                 ></motion.img>
           </motion.div>
     
-        </> 
+        </div> 
       );
 }

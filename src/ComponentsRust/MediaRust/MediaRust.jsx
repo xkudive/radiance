@@ -4,11 +4,15 @@ import { motion, AnimatePresence, useTransform, useMotionValue, useSpring } from
 import Backdrop from "../../Components/Navbar/modals/Backdrop";
 import "./MediaRust.scss";
 
+import modalClose from "../../images/modal_close.svg";
 import loader1 from "../../images/cheat_1.png";
 import loader2 from "../../images/cheat_2.png";
 import loader3 from "../../images/cheat_3.png";
 import loader4 from "../../images/cheat_4.png";
 import loader5 from "../../images/cheat_5.png";
+import loader6 from "../../images/cheat_6.png";
+import loader7 from "../../images/cheat_7.png";
+import loader8 from "../../images/cheat_8.png";
 
 export default function MediaRust() {
 
@@ -78,19 +82,25 @@ export default function MediaRust() {
             return <img src={loader4} draggable="false" alt="" />
         }else if(imagePreview === 5) {
             return <img src={loader5} draggable="false" alt="" />
+        }else if(imagePreview === 6) {
+            return <img src={loader6} draggable="false" alt="" />
+        }else if(imagePreview === 7) {
+            return <img src={loader7} draggable="false" alt="" />
+        }else if(imagePreview === 8) {
+            return <img src={loader8} draggable="false" alt="" />
         }
     }
 
     function galleryLeftButton(){
         let imageId = imagePreview;
         let newImageId = imageId - 1;
-        if (newImageId === 0) newImageId = 5;
+        if (newImageId === 0) newImageId = 8;
         setImagePreview(newImageId);
     }
     function galleryRightButton(){
         let imageId = imagePreview;
         let newImageId = imageId + 1;
-        if (newImageId === 6) newImageId = 1;
+        if (newImageId === 9) newImageId = 1;
         setImagePreview(newImageId);
     }
 
@@ -147,6 +157,24 @@ export default function MediaRust() {
                                 imageGalleryOpen()
                             }}
                              alt="" /></div>
+                        <div className="media-rust-image" id-animation="6"><img draggable="false" src={loader6} 
+                            onMouseUp={() => {
+                                setImagePreview(6) 
+                                imageGalleryOpen()
+                            }}
+                             alt="" /></div>
+                        <div className="media-rust-image" id-animation="7"><img draggable="false" src={loader7} 
+                            onMouseUp={() => {
+                                setImagePreview(7) 
+                                imageGalleryOpen()
+                            }}
+                             alt="" /></div>
+                        <div className="media-rust-image" id-animation="8"><img draggable="false" src={loader8} 
+                            onMouseUp={() => {
+                                setImagePreview(8) 
+                                imageGalleryOpen()
+                            }}
+                             alt="" /></div>          
                     </motion.div>
                     </div>
                 </motion.div>
@@ -193,7 +221,7 @@ export default function MediaRust() {
                                                 {imagePreview}
                                             </motion.span>
                                         </AnimatePresence>
-                                        <span>/5</span>
+                                        <span>/8</span>
                                     </span>
 
                                 <span className="gallery-button gallery-button-right" draggable="false" onClick={(e) => {
@@ -201,6 +229,12 @@ export default function MediaRust() {
                                     galleryRightButton();
                                 }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M23.91,16,10.21,29.71,8.79,28.29,21.09,16,8.79,3.71l1.42-1.42Z" fill="#fff"/></svg>
+                                </span>
+                                <span className="gallery-modal-close" draggable="false" onClick={(e) => {
+                                    e.stopPropagation();
+                                    imageGalleryClose();
+                                }}>
+                                    <img src={modalClose} alt="" />
                                 </span>
                             </div>
                         </Backdrop>

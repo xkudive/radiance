@@ -9,14 +9,21 @@ export default function HeroRust(){
 
     let [link, setLink] = React.useState("");
 
-    let apiKey = "AIzaSyBv8OWiKE_opKlWQ50GxBhQljoZkXuLnV0";
+    let apiKey = "AIzaSyCtVAy2Cck4Us9apXs06pisz2doKUf_IIE";
     let channelId = "UCdUvCzypuYbsAaJEMyOLPyQ";
 
     React.useEffect(() => {
         async function getVideoLink(){
-            let json = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=1`);
-            let parsed = await json.json();
-            setLink(await (parsed?.items[0]?.id?.videoId))
+            try{
+                let json = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=1`);
+                let parsed = await json.json();
+                console.log(await parsed)
+                setLink(await (parsed?.items[0]?.id?.videoId))
+            }
+            catch(e){
+                console.error("Quota Exceeded")
+                setLink("7n6-WWYnqTI");
+            }
         }
         getVideoLink()
     }, [])

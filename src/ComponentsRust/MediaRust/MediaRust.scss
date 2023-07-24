@@ -183,14 +183,13 @@
     height: 640px;
     max-height: 80%;
     display: flex;
-    border-radius: 16px;
-    overflow: hidden;
     user-select: none;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
 
     img{
         object-fit: cover;
-        user-select: none;        
+        user-select: none;     
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;   
     }
 }
 

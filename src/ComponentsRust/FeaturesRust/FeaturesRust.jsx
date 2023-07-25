@@ -40,7 +40,7 @@ export default function FeaturesRust({rerenderValue}) {
         <div className="features-rust box">
             <div className="container" style={{maxHeight: `${showToggle ? "320px" : height+"px"}`}} ref={featuresRustRef}>
                 <div className="features-title">
-                    Functionalty
+                    Functionality
                 </div>
                 <div className="feature-content-container" ref={featureContentRef}>
                     <div className="feature-content-box" id-animation="1">

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Buy from "../Components/Buy/Buy"
+import BuyRust from "../ComponentsRust/BuyRust/BuyRust"
 import HeroRust from "../ComponentsRust/HeroRust/HeroRust";
 import MediaRust from "../ComponentsRust/MediaRust/MediaRust";
 import FeaturesRust from "../ComponentsRust/FeaturesRust/FeaturesRust";
@@ -10,6 +10,7 @@ import FeaturesRust from "../ComponentsRust/FeaturesRust/FeaturesRust";
 import logo from "../images/mama.png";
 
 export default function Rust() {
+
     let [rerenderBuy, setRerenderBuy] = React.useState(0);
 
     return (
@@ -17,7 +18,7 @@ export default function Rust() {
             <HeroRust />
             <MediaRust />
             <FeaturesRust rerenderValue={() => setRerenderBuy((rerenderBuy) => rerenderBuy + 1)} />
-            <Buy newRender={rerenderBuy}/>
+            <BuyRust newRender={rerenderBuy}/>
             
             <motion.div 
                 className="slideIn"

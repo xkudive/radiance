@@ -13,9 +13,10 @@ import Rust from "./Pages/Rust";
 const App = () => {
 
   let location = useLocation();
+  
   let [device, setDevice] = React.useState(true);
   let [cursorPos, setCursorPos] = React.useState([500,500]);
-    
+
   React.useEffect(() => {
     function cursorPosCalc(e) {
       setCursorPos([e.clientX, e.clientY])

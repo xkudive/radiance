@@ -17,7 +17,6 @@ export default function HeroRust(){
             try{
                 let json = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=1`);
                 let parsed = await json.json();
-                console.log(await parsed)
                 setLink(await (parsed?.items[0]?.id?.videoId))
             }
             catch(e){

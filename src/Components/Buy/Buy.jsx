@@ -1,8 +1,6 @@
 import React from "react";
 import {motion, AnimatePresence} from "framer-motion";
 import { Link } from "react-router-dom";
-
-import Backdrop from "../Navbar/modals/Backdrop";
 import BuyCard from "./Modal/BuyCard";
 import "./Buy.scss";
 
@@ -11,24 +9,13 @@ import support from "../../images/support.svg";
 import quality from "../../images/premium_quality.svg";
 import lightning from "../../images/lightning.svg";
 import cube from "../../images/cube.svg";
-import modalClose from "../../images/modal_close.svg";
-import block from "../../images/block.svg";
 import star from "../../images/star.svg";
 
-export default function Buy({newRender}) {
+export default function Buy() {
 
-    let buyTopRef = React.useRef();
-    let buyCardsRef = React.useRef();
+    let buyRef = React.useRef();
 
     let [activeTabRegion, setActiveTabRegion] = React.useState(0);
-    let [agreementActive, setAgreementActive] = React.useState(false);
-    let [checkboxActive, setCheckboxActive] = React.useState(false);
-    let [popupActive, setPopupActive] = React.useState(false);
-    
-    let closeAgreement = () => {
-        setAgreementActive(false);
-        document.body.setAttribute("overflow", "visible")
-    }
 
     let [mousePos, setMousePos] = React.useState([0, 0]);
     function cursorCalc(e) {
@@ -49,14 +36,13 @@ export default function Buy({newRender}) {
             })  
         }, {threshold: 0.3})
     
-        observer.observe(buyTopRef.current);
-        observer.observe(buyCardsRef.current);
+        observer.observe(buyRef.current);
     }, [])
 
     return(
         <div className="buy box" id="rust-prices">
-            <div className="container">
-                <div className="buy-top-content" ref={buyTopRef} style={{marginBottom: "56px"}}>
+            <div className="container" ref={buyRef}>
+                <div className="buy-top-content" style={{marginBottom: "56px"}}>
                     <h2>Subscription</h2>
                     <p>Select the desired subscription period</p>
                     <div className="modal-content region">
@@ -68,9 +54,9 @@ export default function Buy({newRender}) {
                         </div>
                     </div>  
                 </div>
-                <div className="buy-cards-container" ref={buyCardsRef} onMouseMove={(e) => cursorCalc(e)}>
+                <div className="buy-cards-container" onMouseMove={(e) => cursorCalc(e)}>
                     <div className="box-gradient"></div>
-                    <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
+                    <BuyCard cursorPos={mousePos}>
                         <div className="plan-image">
                             <span><img src={star} alt="" /></span>
                         </div>
@@ -116,7 +102,7 @@ export default function Buy({newRender}) {
                         </div>
                         <Link to="/rust" className="plan-buy-button">View Product</Link>
                     </BuyCard>                   
-                    <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
+                    <BuyCard cursorPos={mousePos}>
                         <div className="plan-image">
                             <span><img src={lightning} alt="" /></span>
                             <div className="most-popular">Most popular</div>
@@ -163,7 +149,7 @@ export default function Buy({newRender}) {
                         </div>
                         <Link to="/rust" className="plan-buy-button">View Product</Link>
                     </BuyCard>
-                    <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
+                    <BuyCard cursorPos={mousePos}>
                         <div className="plan-image">
                             <span><img src={diamond} alt="" /></span>
                         </div>

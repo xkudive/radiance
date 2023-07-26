@@ -1,5 +1,5 @@
 import React from "react";
-import {motion, AnimatePresence, useTransform, useSpring, MotionConfig, delay } from "framer-motion"
+import {motion, AnimatePresence} from "framer-motion"
 import { Link } from "react-router-dom";
 
 import Backdrop from "./modals/Backdrop";
@@ -8,14 +8,20 @@ import ModalCard from "./modals/ModalCard";
 
 import "./Navbar.scss";
 import logo from "../../images/logo.png";
-import ru from "../../images/ru_flag.png";
-import eng from "../../images/eng_flag.png";
 import rust from "../../images/rust.webp";
 import unturned from "../../images/unturned.webp";
 import modalClose from "../../images/modal_close.svg";
 import block from "../../images/block.svg";
 
+
 export default function Navbar() {
+    
+    React.useEffect(() => {
+        let imagesArray = [rust, unturned, block]
+        imagesArray.forEach((image) => {
+            new Image().src = image
+          });
+    }, [])
 
     let [modalOpen, setModalOpen] = React.useState(false)
     let [SubscriptionModalOpen, setSubscriptionModalOpen] = React.useState(false)
@@ -273,7 +279,7 @@ export default function Navbar() {
                     closeSubscription();
                 }}><img src={logo} alt="" /></Link>
                 <ul className="navbar-ul">
-                    <a className={`navbar-ul-a modal${modalOpen ? " clicked" : ""}`} href="#" onClick={() => modalOpen ? close() : open()}>
+                    <a className={`navbar-ul-a modal${modalOpen ? " clicked" : ""}`} onClick={() => modalOpen ? close() : open()}>
                         <li>Our Products</li>
                         <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 1L4 4L1 0.999999" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

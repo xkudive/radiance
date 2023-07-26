@@ -75,7 +75,6 @@
             overflow: hidden;
             pointer-events: none;
             z-index: 1;
-            filter: grayscale(0);
             transition: 0.3s ease;
 
             img{
@@ -84,10 +83,6 @@
                 object-fit: cover;
                 width: 100%;
                 top: 0;
-            }
-
-            &.unturned{
-                filter: grayscale(1) blur(8px);
             }
         }
 

@@ -10,6 +10,10 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+*::selection {
+	background: rgb(113, 139, 211);
+}
+
 .preload * , .preload *::before, .preload *::after{
 	-webkit-animation: none !important;
 	-moz-animation: none !important;

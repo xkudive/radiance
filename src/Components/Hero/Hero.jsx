@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useScroll, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import "./Hero.scss"

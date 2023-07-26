@@ -16,8 +16,14 @@ import star from "../../images/star.svg";
 
 export default function Buy({newRender}) {
 
-    let buyTopRef = React.useRef();
-    let buyCardsRef = React.useRef();
+    React.useEffect(() => {
+        let imagesArray = [block]
+        imagesArray.forEach((image) => {
+            new Image().src = image
+          });
+    }, [])
+
+    let buyRef = React.useRef();
 
     let [activeTabRegion, setActiveTabRegion] = React.useState(0);
     let [agreementActive, setAgreementActive] = React.useState(false);
@@ -48,14 +54,13 @@ export default function Buy({newRender}) {
             })  
         }, {threshold: 0.3})
     
-        observer.observe(buyTopRef.current);
-        observer.observe(buyCardsRef.current);
+        observer.observe(buyRef.current);
     }, [])
 
     return(
         <div className="buy box" id="rust-prices">
-            <div className="container">
-                <div className="buy-top-content" ref={buyTopRef}>
+            <div className="container" ref={buyRef}>
+                <div className="buy-top-content">
                     <h2>Subscription</h2>
                     <p>Select the desired subscription period</p>
                     <div className="modal-content region">
@@ -77,7 +82,7 @@ export default function Buy({newRender}) {
                         </div>
                     </div>  
                 </div>
-                <div className="buy-cards-container" ref={buyCardsRef} onMouseMove={(e) => cursorCalc(e)}>
+                <div className="buy-cards-container" onMouseMove={(e) => cursorCalc(e)}>
                     <div className="box-gradient"></div>
                     <BuyCard cursorPos={mousePos} updateBoxValues={newRender}>
                         <div className="plan-image">

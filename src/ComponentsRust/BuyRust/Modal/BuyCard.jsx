@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useTransform, useSpring, useMotionValue } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function BuyCard({ children, cursorPos, animationId, updateBoxValues}) {
 
@@ -26,10 +26,15 @@ export default function BuyCard({ children, cursorPos, animationId, updateBoxVal
     }
 
     return(
-        <motion.div className="buy-card" data-id={animationId} onMouseMove={(e) => cursorCalc(e)} ref={ref}>
-            <div className="circle" style={{transform: `translate(${cursorPos[0]-boxPos[0]-400}px , ${cursorPos[1]-boxPos[1]-400}px)`}}></div>
+        <motion.div className="buy-card" 
+            data-id={animationId} 
+            onMouseMove={(e) => cursorCalc(e)}
+            onMouseOver={(e) => cursorCalc(e)}
+            ref={ref}
+        >
+            <div className="circle" style={{transform: `translateX(${cursorPos[0]-boxPos[0]-400}px) translateY(${cursorPos[1]-boxPos[1]-400}px) translateZ(0px)`}}></div>
             <div className="buy-card-inner">
-                <div className="inner-circle" style={{transform: `translate(${mousePos[0]-600}px , ${mousePos[1]-600}px)`}}></div>
+                <div className="inner-circle" style={{transform: `translateX(${mousePos[0]-600}px) translateY(${mousePos[1]-600}px) translateZ(0px)`}}></div>
                 {children}
             </div>
         </motion.div>

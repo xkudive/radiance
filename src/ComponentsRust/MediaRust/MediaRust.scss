@@ -8,7 +8,7 @@
         max-width: 100%;
 
         & > .box-gradient{
-            opacity: 1;
+            opacity: 0;
             
             &:before{
                 --color-a:#8359e5;
@@ -18,6 +18,10 @@
         }
 
         &.active{
+
+            .box-gradient{
+                animation: fadeIn 0.5s 0.5s forwards;
+            }
             .media-rust-title{
                 animation: fadeIn 1s 0.75s forwards;
             }
@@ -89,6 +93,27 @@
     overflow: hidden;
     padding-right: 16px;
     opacity: 0;
+    position: relative;
+
+    &:before{
+        z-index: 3;
+        content: "";
+        display: flex;
+        width: calc(100% - 16px);
+        height: 100%;
+        background: linear-gradient(to bottom, rgb(224, 170, 89), rgba(255,255,255,0));
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: 0.4s ease;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+    &:hover:before{
+        opacity: 0.2;
+    }
 
     &:first-child{
         border-radius: 8px 0px 0px 8px;
@@ -98,6 +123,10 @@
         border-radius: 0px 8px 8px 0px;
         padding-right: 0px;
         width: 320px;
+
+        &:before{
+            width: 100%;
+        }
     }
 
 

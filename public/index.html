@@ -5,10 +5,15 @@
     <link rel="icon" href="%PUBLIC_URL%/FranzJ.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Website created by @xkudive"
-    />
+    <link rel="shortlink" href="https://radianceproject.xyz/">
+    <link rel="alternate" href="https://radianceproject.xyz/" hreflang="en">
+    <meta name="description" content="Shine brightest with radiance and always be on top! Radiance includes the highest quality cheat features, and will assure that you dominate every opponent.">
+    <link rel="canonical" href="https://radianceproject.xyz/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="%PUBLIC_URL%/FranzJ.png">
+    <meta property="og:title" content="Radiance Software">
+    <meta property="og:description" content="Shine brightest with radiance and always be on top! Radiance includes the highest quality cheat features, and will assure that you dominate every opponent.">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/FranzJ.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Radiance Software</title>
@@ -23,6 +28,10 @@
         scroll-behavior: smooth;
         scroll-margin-top: 75px;
         -webkit-font-smoothing: antialiased;
+      }
+
+      body{
+        background: #0E172B;
       }
 
       .preloader{
@@ -73,7 +82,7 @@
 
   <script>
     window.addEventListener("load", () => {
-      document.body.classList.remove("preload")
+        document.body.classList.remove("preload")
       setTimeout(() => {
         document.body.setAttribute("overflow", "visible")
       }, 800)

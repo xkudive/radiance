@@ -30,9 +30,9 @@ export default function ModalCard({children, cursorPos}) {
 
     return(
         <div className="navbar-modal-card" onMouseMove={(e) => handleMouseMove(e)} ref={ref}>
-            <div className="circle" style={{transform: `translate(${cursorPos[0] - boxPos[0]}px, ${cursorPos[1] - boxPos[1]}px)`}}></div>
+            <div className="circle" style={{transform: `translateX(${cursorPos[0] - boxPos[0]}px) translateY${cursorPos[1] - boxPos[1]}px) translateZ(0px)`}}></div>
             <div className="navbar-modal-inner-card">
-                <div className="inner-circle" style={{transform: `translate(${circleX}px, ${circleY}px)`}}></div>
+                <div className="inner-circle" style={{transform: `translateX(${circleX}px) translateY${circleY}px) translateZ(0px)`}}></div>
                 {children}
             </div>
         </div>

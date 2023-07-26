@@ -5,14 +5,14 @@ import Backdrop from "../../Components/Navbar/modals/Backdrop";
 import "./MediaRust.scss";
 
 import modalClose from "../../images/modal_close.svg";
-import loader1 from "../../images/cheat_1.png";
-import loader2 from "../../images/cheat_2.png";
-import loader3 from "../../images/cheat_3.png";
-import loader4 from "../../images/cheat_4.png";
-import loader5 from "../../images/cheat_5.png";
-import loader6 from "../../images/cheat_6.png";
-import loader7 from "../../images/cheat_7.png";
-import loader8 from "../../images/cheat_8.png";
+import loader1 from "../../images/cheat_1.jpg";
+import loader2 from "../../images/cheat_2.jpg";
+import loader3 from "../../images/cheat_3.jpg";
+import loader4 from "../../images/cheat_4.jpg";
+import loader5 from "../../images/cheat_5.jpg";
+import loader6 from "../../images/cheat_6.jpg";
+import loader7 from "../../images/cheat_7.jpg";
+import loader8 from "../../images/cheat_8.jpg";
 
 export default function MediaRust() {
 

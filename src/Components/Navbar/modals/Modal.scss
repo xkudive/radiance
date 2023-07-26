@@ -8,6 +8,7 @@
     background: #101010;
     z-index: 991;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
+    will-change: transform, animation, opacity;
 
     .container{
         padding-bottom: 48px;

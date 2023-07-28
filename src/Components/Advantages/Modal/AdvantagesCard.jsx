@@ -14,9 +14,9 @@ export default function AdvantagesCard({text, children, cursorPos, animationId})
         function boxPosCalc() {
             let rect = ref.current.getBoundingClientRect();
             setBoxPos([rect.left, rect.top + window.pageYOffset, ref.current.offsetWidth])
+            setTimeout(() => setTextWidth(textRef.current.offsetWidth), 100)
         }
         boxPosCalc()
-        setTimeout(() => setTextWidth(textRef.current.offsetWidth), 100)
         window.addEventListener("resize", boxPosCalc);
         return () => window.removeEventListener("resize", boxPosCalc);
     }, [])

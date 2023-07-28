@@ -250,21 +250,6 @@
             padding-top: 110px;
         }
     }
-
-
-    .advantages-background-text{
-        opacity: 0.1;
-    }
-
-    .advantages-card-inner{
-        &:hover{
-    
-            .advantages-background-text{
-                color: rgb(19, 19, 21);
-                opacity: 0.3;
-            }
-        }
-    }
 }
 @media screen and (max-width: 480px) {
 

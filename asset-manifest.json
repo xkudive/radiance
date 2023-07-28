@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/radiance/static/css/main.7323c8dd.css",
-    "main.js": "/radiance/static/js/main.3657e442.js",
+    "main.css": "/radiance/static/css/main.3e1e4b69.css",
+    "main.js": "/radiance/static/js/main.7b91f0b4.js",
     "static/media/otkis.gif": "/radiance/static/media/otkis.38f6129a628cc1c8d6fd.gif",
     "static/media/hero_glow.webp": "/radiance/static/media/hero_glow.c87a1fc3feb9c8556d6a.webp",
     "static/media/mama.png": "/radiance/static/media/mama.2a539e1fe246c6caee09.png",
@@ -28,11 +28,12 @@
     "static/media/diamond.svg": "/radiance/static/media/diamond.293b491006126c81ea40d4537b1f55c4.svg",
     "static/media/modal_close.svg": "/radiance/static/media/modal_close.f9811153166663a279a443f6537b3097.svg",
     "static/media/lightning.svg": "/radiance/static/media/lightning.f771e92404956adfb4fbafbd1529896e.svg",
-    "main.7323c8dd.css.map": "/radiance/static/css/main.7323c8dd.css.map",
-    "main.3657e442.js.map": "/radiance/static/js/main.3657e442.js.map"
+    "static/media/arrow.svg": "/radiance/static/media/arrow.b28063c595d5ad781c8d0f622694a7b9.svg",
+    "main.3e1e4b69.css.map": "/radiance/static/css/main.3e1e4b69.css.map",
+    "main.7b91f0b4.js.map": "/radiance/static/js/main.7b91f0b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7323c8dd.css",
-    "static/js/main.3657e442.js"
+    "static/css/main.3e1e4b69.css",
+    "static/js/main.7b91f0b4.js"
   ]
 }

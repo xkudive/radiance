@@ -121,3 +121,18 @@
     color:#cbd5e1;
     font-size: 14px;
 }
+
+@media screen and (max-width: 860px){
+    .feature-content-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 590px){
+    .features-title{
+        font-size: 32px;
+    }
+
+    .feature-content-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

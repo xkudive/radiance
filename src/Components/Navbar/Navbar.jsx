@@ -1,5 +1,5 @@
 import React from "react";
-import {motion, AnimatePresence} from "framer-motion"
+import {motion, AnimatePresence, delay} from "framer-motion"
 import { Link } from "react-router-dom";
 
 import Backdrop from "./modals/Backdrop";
@@ -25,6 +25,16 @@ export default function Navbar() {
 
     let [modalOpen, setModalOpen] = React.useState(false)
     let [SubscriptionModalOpen, setSubscriptionModalOpen] = React.useState(false)
+    let [burgerOpen, setBurgerOpen] = React.useState(false);
+    let [buttonBlock, setButtonBlock] = React.useState(false);
+    let [productsMenu, setProductsMenu] = React.useState(false);
+
+    function buttonBlockFunction() {
+        setButtonBlock(true);
+        setTimeout(() => {
+            setButtonBlock(false)
+        },1300)
+    }
 
     let open = () => {
         setModalOpen(true);
@@ -43,6 +53,14 @@ export default function Navbar() {
     }
     let closeSubscription = () => {
         setSubscriptionModalOpen(false);
+        document.body.setAttribute("overflow", "visible")
+    }
+    let openNavbar = () => {
+        setBurgerOpen(true);
+        document.body.setAttribute("overflow", "hidden")
+    }
+    let closeNavbar = () => {
+        setBurgerOpen(false);
         document.body.setAttribute("overflow", "visible")
     }
 
@@ -82,6 +100,41 @@ export default function Navbar() {
         if(activeTabTariff === 2) return <div><span>9100₽</span><span>/month</span></div>
     }
     
+    const linkStagger = {
+        initial: {
+            opacity: 0,
+            y: 64,
+            transition: {
+                duration: 0.5,
+                ease: [0.65,0.05,0.36,1]
+            }
+        },
+        open: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration:  0.5,
+                ease: [0.65,0.05,0.36,1]
+            }
+        },
+    }
+    const parentStagger = {
+        initial: {
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0,
+                staggerDirection: -1
+            }
+        },
+        open: {
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.8,
+                staggerDirection: 1
+            }
+        },
+    }
+
     return(
         <div className="navbar box">
             <div className="container">
@@ -274,10 +327,177 @@ export default function Navbar() {
                     }
                 </AnimatePresence>
 
+                <AnimatePresence initial={false}>
+                    {burgerOpen &&
+                        <motion.div 
+                            className="navbar-burger-menu"
+                            initial={{clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", transition: {duration: 0.8, ease: [0.27,0.94,0.48,1.00]} }}
+                            animate={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", transition: {duration: 0.8, ease: [0.27,0.94,0.48,1.00]} }}
+                            exit={{clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", transition: {duration: 0.8, delay: 0.5, ease: [0.27,0.94,0.48,1.00]} }}
+                        >
+                            <div className="container">
+                                <motion.div 
+                                    className="navbar-burger-menu-top"
+                                    initial={{y: "-30px", opacity: 0}}
+                                    animate={{y: 0, opacity: 1, transition: {duration: 0.8, delay: 0.3, ease: [0.65,0.05,0.36,1]} }}
+                                    exit={{y: "-30px",opacity: 0, transition: {duration: 0.5, delay: 0.3, ease: [0.65,0.05,0.36,1]} }}
+                                >
+                                    <Link 
+                                        to="/" 
+                                        onClick={() => {
+                                            setProductsMenu(false)
+                                            setTimeout(() => {
+                                                close();
+                                                closeSubscription();
+                                                closeNavbar();
+                                            },100)
+                                        }}
+                                    >
+                                        <div className="navbar-logo">
+                                            <img src={logo} alt="" />
+                                        </div>
+                                    </Link>
+                                    <div 
+                                        className={`burger-btn active ${buttonBlock ? "non-clickable" : ""}`} 
+                                        onClick={() => {
+                                            setProductsMenu(false)
+                                            setTimeout(() => {
+                                                closeNavbar();
+                                                buttonBlockFunction();
+                                            },100)
+                                        }}
+                                    >
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </motion.div>
+                                <div className="navbar-burger-menu-content">
+
+                                    <motion.ul 
+                                        variants={parentStagger}
+                                        initial="initial"
+                                        animate="open"
+                                        exit="initial"
+                                    >
+                                        <div style={{overflow: "hidden"}}>
+                                            <Link 
+                                                to="/" 
+                                                onClick={() => {
+                                                    setProductsMenu(false)
+                                                    setTimeout(() => {
+                                                        close();
+                                                        closeSubscription();
+                                                        closeNavbar();
+                                                    },100)
+                                                }}
+                                            >
+                                                <motion.a 
+                                                    className="navbar-ul-a"
+                                                    variants={linkStagger}
+                                                >
+                                                    <li>Home</li>
+                                                </motion.a>
+                                            </Link>
+                                        </div>
+                                        <div style={{overflow: "hidden"}}>
+                                            <motion.a 
+                                                className={`navbar-ul-a modal ${productsMenu ? " clicked" : ""}`} 
+                                                onClick={() => setProductsMenu(!productsMenu)}
+                                                variants={linkStagger}
+                                            >
+                                                <li>Our Products</li>
+                                                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 1L4 4L1 0.999999" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                </svg>
+                                            </motion.a>
+                                        </div>
+                                        <AnimatePresence initial={false}>
+                                            {productsMenu &&
+                                                <motion.div className="burger-products" 
+                                                initial={{height: 0, transition: {duration: 0.5, ease: [0.27,0.94,0.48,1]}}}
+                                                animate={{height: "128px", transition: {duration: 0.5, ease: [0.27,0.94,0.48,1]}}}
+                                                exit={{height: 0, transition: {duration: 0.5, ease: [0.27,0.94,0.48,1]}}}
+                                                key={productsMenu}>
+                                                    <div className="burger-products-inner">
+                                                        <Link 
+                                                            to="/rust"
+                                                            onClick={() => {
+                                                                setProductsMenu(false)
+                                                                setTimeout(() => {
+                                                                    close();
+                                                                    closeSubscription();
+                                                                    closeNavbar();
+                                                                },100)
+                                                            }}
+                                                            >
+                                                            <motion.span
+                                                                initial={{opacity: 0, transition: {duration: 0.6, ease: [0.27,0.94,0.48,1]}}}
+                                                                animate={{opacity: 1, transition: {duration: 0.6, delay: 0.3, ease: [0.27,0.94,0.48,1]}}}
+                                                                exit={{opacity: 0, transition: {duration: 0.6, ease: [0.27,0.94,0.48,1]}}}
+                                                                key={productsMenu}
+                                                            >Rust Radiance</motion.span>
+                                                        </Link>
+                                                        <motion.span
+                                                            initial={{opacity: 0, transition: {duration: 0.6, ease: [0.27,0.94,0.48,1]}}}
+                                                            animate={{opacity: 1, transition: {duration: 0.6, delay: 0.4, ease: [0.27,0.94,0.48,1]}}}
+                                                            exit={{opacity: 0, transition: {duration: 0.6, ease: [0.27,0.94,0.48,1]}}}
+                                                            key={productsMenu}
+                                                        >Coming Soon...</motion.span>
+                                                    </div>
+                                                </motion.div>    
+                                            }
+                                        </AnimatePresence>
+                                        <div style={{overflow: "hidden"}}>
+                                            <motion.a 
+                                                className="navbar-ul-a" 
+                                                target="_blank" 
+                                                href="https://discord.com/invite/radianceproject/"
+                                                variants={linkStagger}
+                                            >
+                                                <li>Support</li>
+                                            </motion.a>
+                                        </div>
+
+                                        <div style={{overflow: "hidden"}}>
+                                            <Link 
+                                                to="/rust" 
+                                                onClick={() => {
+                                                    setProductsMenu(false)
+                                                    setTimeout(() => {
+                                                        close();
+                                                        closeSubscription();
+                                                        closeNavbar();
+                                                    },100)
+                                                }}
+                                            >
+                                                <motion.a 
+                                                    className="navbar-ul-a"
+                                                    variants={linkStagger}
+                                                >
+                                                    <li>Buy Subscription</li>
+                                                </motion.a>
+                                            </Link>
+                                        </div>
+                                    </motion.ul>
+                                </div>
+                            </div>
+                        </motion.div>
+                    }
+                </AnimatePresence>
+
                 <Link to="/" className="navbar-logo" onClick={() => {
                     close();
                     closeSubscription();
                 }}><img src={logo} alt="" /></Link>
+                <div className={`burger-btn ${buttonBlock ? "non-clickable" : ""}`} onClick={() => {
+                        openNavbar();
+                        buttonBlockFunction()
+                    }}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul className="navbar-ul">
                     <a className={`navbar-ul-a modal${modalOpen ? " clicked" : ""}`} onClick={() => modalOpen ? close() : open()}>
                         <li>Our Products</li>

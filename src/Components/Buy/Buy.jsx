@@ -34,7 +34,7 @@ export default function Buy() {
                     observer.unobserve(entry.target);
                 }
             })  
-        }, {threshold: 0.3})
+        }, {threshold: 0.1 })
     
         observer.observe(buyRef.current);
     }, [])
@@ -45,14 +45,12 @@ export default function Buy() {
                 <div className="buy-top-content" style={{marginBottom: "56px"}}>
                     <h2>Subscription</h2>
                     <p>Select the desired subscription period</p>
-                    <div className="modal-content region">
-                        <div className="content-options" style={{width: "400px"}}>
-                            <span className={activeTabRegion === 0 ? "active" : ""} onClick={() => setActiveTabRegion(0)}>Global Region</span>
-                            <span className={activeTabRegion === 1 ? "active" : ""} onClick={() => setActiveTabRegion(1)}>CIS Region</span>
+                    <div className="content-options">
+                        <span className={activeTabRegion === 0 ? "active" : ""} onClick={() => setActiveTabRegion(0)}>Global Region</span>
+                        <span className={activeTabRegion === 1 ? "active" : ""} onClick={() => setActiveTabRegion(1)}>CIS Region</span>
 
-                            <div className="active-indicator" style={activeTabRegion === 0 ? {left : "4px", background: "#2c3d3c"} : {left: "50%", background: "#2c3d3c"}}></div>
-                        </div>
-                    </div>  
+                        <div className="active-indicator" style={activeTabRegion === 0 ? {left : "4px", background: "#2c3d3c"} : {left: "50%", background: "#2c3d3c"}}></div>
+                    </div>
                 </div>
                 <div className="buy-cards-container" onMouseMove={(e) => cursorCalc(e)}>
                     <div className="box-gradient"></div>

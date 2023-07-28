@@ -5,6 +5,7 @@ import Backdrop from "../../Components/Navbar/modals/Backdrop";
 import "./MediaRust.scss";
 
 import modalClose from "../../images/modal_close.svg";
+import arrowGallery from "../../images/arrow.svg";
 import loader1 from "../../images/cheat_1.jpg";
 import loader2 from "../../images/cheat_2.jpg";
 import loader3 from "../../images/cheat_3.jpg";
@@ -20,10 +21,14 @@ export default function MediaRust() {
     let slider = React.useRef();
     let innerSlider = React.useRef();
     let containerSliderRef = React.useRef();
+    let indicatorRef = React.useRef();
+    let indicatorInnerRef = React.useRef();
     let [width, setWidth] = React.useState(0);
     let [imagePreview, setImagePreview] = React.useState(1);
     let [galleryOpen, setGalleryOpen] = React.useState(false);
     let [nonClickable, setNonClickable] = React.useState(false);
+    let [indicatorWidth, setIndicatorWidth] = React.useState(0);
+    let [indicatorScroll, setIndicatorScroll] = React.useState(0);
 
     React.useEffect(() => {
         let observer = new IntersectionObserver((entries) => {
@@ -38,6 +43,18 @@ export default function MediaRust() {
         }, {threshold: 0.3})
         
         observer.observe(mediaRustRef.current)
+    }, [])
+
+    React.useEffect(() => {
+        function getSliderWidth(){
+            let width = indicatorRef.current.clientWidth / 2.3
+            let scroll = indicatorRef.current.clientWidth - width
+            setIndicatorWidth(width)
+            setIndicatorScroll(scroll)
+        }
+        getSliderWidth()
+        window.addEventListener("resize", getSliderWidth);
+        return () => window.removeEventListener("resize", getSliderWidth);
     }, [])
     
     function imageGalleryOpen() {
@@ -65,7 +82,7 @@ export default function MediaRust() {
         return () => window.removeEventListener("resize", scrollCalc);
     }, [])
 
-    const progress = useSpring(useTransform(x, [0, width], [0, 400]), {
+    const progress = useSpring(useTransform(x, [0, width], [0, indicatorScroll]), {
         stiffness: 1000,
         damping: 100,
         mass: 1,
@@ -179,8 +196,8 @@ export default function MediaRust() {
                     </div>
                 </motion.div>
                 <div className="media-slider-indicator-container">
-                    <div className="media-slider-indicator">
-                        <motion.div className="media-slider-indicator-inner" style={{translateX: progress}}></motion.div>
+                    <div className="media-slider-indicator" ref={indicatorRef}>
+                        <motion.div className="media-slider-indicator-inner" ref={indicatorInnerRef} style={{translateX: progress, width: indicatorWidth+"px"}}></motion.div>
                     </div>
                 </div>
 
@@ -193,7 +210,7 @@ export default function MediaRust() {
                                     e.stopPropagation();
                                     galleryLeftButton();
                                 }} style={{rotate: "180deg"}}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M23.91,16,10.21,29.71,8.79,28.29,21.09,16,8.79,3.71l1.42-1.42Z" fill="#fff"/></svg>
+                                    <img src={arrowGallery} alt="" />
                                 </span>
                                 <AnimatePresence mode="wait">
                                     
@@ -228,7 +245,7 @@ export default function MediaRust() {
                                     e.stopPropagation();
                                     galleryRightButton();
                                 }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M23.91,16,10.21,29.71,8.79,28.29,21.09,16,8.79,3.71l1.42-1.42Z" fill="#fff"/></svg>
+                                    <img src={arrowGallery} alt="" />
                                 </span>
                                 <span className="gallery-modal-close" draggable="false" onClick={(e) => {
                                     e.stopPropagation();

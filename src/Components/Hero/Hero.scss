@@ -29,7 +29,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    animation: scrollContainer 2s cubic-bezier(0.27,0.94,0.48,1.01) infinite;
+    animation: scrollContainer 2s cubic-bezier(0.27,0.94,0.48,1.00) infinite;
 
     &:before{
         content: "";
@@ -230,12 +230,11 @@
     opacity: 0;
 
     animation: fadeIn 1s 1.6s forwards;
-
-    p{
-        &:last-child{
-            margin-top: 24px;
-        }
-    }
+}
+.hero-subtitle-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
 }
 
 .hero-title{
@@ -709,13 +708,29 @@
         opacity: 0;
    }
 
-   .scrollAnimationBox{
+    .scrollAnimationBox{
         scale: 0.8;
     }
     .cheat-exe-container{
         scale: 0.8;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .hero-video{
+        -webkit-mask-image: linear-gradient(to top, rgba(255,255,255, 0) 0%, rgba(255,255,255, 1) 100%);
+        &.opacity  {
+            opacity: 0.6;
+        }
+    }
+
+    .hero-bg-video-box{
+        width: 100%;
+        -webkit-mask-image: none;
+
+    }
+}
+
 @media screen and (max-width: 960px) {
     .hero-title{
         display: flex;
@@ -724,5 +739,78 @@
         font-size: 80px;
         font-weight: 700;
         letter-spacing: -1.2px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    
+    .hero-main-content{
+        z-index: 0;
+        padding: 140px 0 80px 0;
+    }    
+
+    .hero-exe{
+        display: none;
+    }
+
+    .scrollAnimation{
+        bottom: -32px;
+    }
+
+    .scrollAnimationBox{
+        scale: 0.7;
+    }
+    .hero-title{
+        font-size: 64px;
+        line-height: 1.1;
+        gap:8px;
+    }
+
+    .hero-subtitle{
+        margin-top: 24px;
+    }
+
+    .hero-subtitle-box{
+        display: flex;
+        margin-bottom: 12px;
+    }
+
+    .scrollAnimationBox{
+        animation: fadeIn 1s 2s forwards;
+    }
+}
+@media screen and (max-width: 425px) {
+    
+    .hero-main-content{
+        z-index: 0;
+        padding: 140px 0 80px 0;
+    }    
+
+    .scrollAnimation{
+        bottom: -80px;
+    }
+
+    .hero-title{
+        font-size: 48px;
+        line-height: 1.1;
+        gap:8px;
+    }
+
+    .hero-subtitle{
+        font-size: 16px;
+        margin-top: 24px;
+    }
+
+    .hero-subtitle-box{
+        display: block;
+        p{
+            display: inline;
+            margin-left: 4px;
+
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+        margin-bottom: 8px;
     }
 }

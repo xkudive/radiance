@@ -57,6 +57,18 @@
         line-height: 150%;
         color: #cbd5e1;
     }
+
+    .modal-content{
+        width: 100%;
+    }
+
+    .content-options{
+        display: flex;
+        position: relative;
+        width: 400px;
+        border-radius: 8px;
+        background: rgb(23, 23, 23);
+    }
 }
 
 .buy-cards-container{
@@ -83,7 +95,7 @@
 }
 
 .buy-card{
-    width: 100%;
+    max-width: 100%;
     position: relative;
     display: flex;
     border-radius: 16px;
@@ -286,5 +298,59 @@
     span:first-child{
         color: #be3e53;
         font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .buy-cards-container{
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 394px;
+
+        &:hover{
+            .circle{
+                opacity: 0;
+            }
+        }
+    }
+
+    .buy-card-inner{
+
+        &:hover{
+            .inner-circle{
+                opacity: 0;
+            }
+        }
+    }
+
+    .buy{
+        margin-top: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buy-top-content{
+        margin-bottom: 48px;
+        width: 100%;
+    
+        h2{
+            font-size: 32px;
+        }
+    
+        &>p{
+            font-size: 14px;
+            margin-top: 12px;
+            margin-bottom: 24px;
+        }
+
+        .content-options{
+            width: 100%;
+            max-width: 394px;
+        }
+    }
+
+    .buy{
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 }

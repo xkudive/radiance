@@ -1,4 +1,4 @@
-.buy{
+.buy-rust{
     margin-top: 200px;
     margin-bottom: 140px;
     .container{
@@ -30,261 +30,318 @@
                 }
             }
         }
-    }
 
-    .subscription-total-cost{
-        font-size: 36px;
-    }
-}
-
-.buy-top-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 48px;
-    opacity: 0;
-    will-change: transform, animation, opacity;
-
-    h2{
-        font-size: 48px;
-        line-height: 115%;
-        letter-spacing: -0.5px;
-    }
-
-    &>p{
-        margin-top: 16px;
-        margin-bottom: 32px;
-        line-height: 150%;
-        color: #cbd5e1;
-    }
-}
-
-.buy-cards-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    position: relative;
-    gap: 16px;
-
-    .box-gradient{
-        opacity: 0;
+        .buy-top-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 48px;
+            opacity: 0;
+            will-change: transform, animation, opacity;
         
-        &:before{
-            --color-a: #5187AD;
-            --color-b: #4DA9B1;
-            --color-c: #49D1B6;
+            h2{
+                font-size: 48px;
+                line-height: 115%;
+                letter-spacing: -0.5px;
+            }
+        
+            &>p{
+                margin-top: 16px;
+                margin-bottom: 32px;
+                line-height: 150%;
+                color: #cbd5e1;
+            }
+        }
+        
+        .buy-cards-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            position: relative;
+            gap: 16px;
+        
+            .box-gradient{
+                opacity: 0;
+                
+                &:before{
+                    --color-a: #5187AD;
+                    --color-b: #4DA9B1;
+                    --color-c: #49D1B6;
+                }
+            }
+        
+            &:hover{
+                .circle{
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .buy-card{
+            width: 100%;
+            position: relative;
+            display: flex;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.12);
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            opacity: 0;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
+            will-change: transform, animation, opacity;
+        
+            .circle, .inner-circle{
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1200px;
+                height: 1200px;
+                background: radial-gradient(600px at center, rgb(255, 255, 255), transparent 60%);
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+        
+            .circle{
+                width: 800px;
+                height: 800px;
+                background: radial-gradient(400px at center, rgba(255, 255, 255, 0.8), transparent 60%);
+            }
+        }
+        
+        .buy-card-inner{
+            position: relative;
+            display: flex;
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+            background: rgb(19, 19, 21);
+            border-radius: 16px;
+            padding: 24px;
+            overflow: hidden;
+            flex-direction: column;
+        
+            &:hover{
+                .inner-circle{
+                    opacity: 0.06;
+                }
+            }
+        }
+        
+        .plan-image{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px;
+                background: #303030;
+                border-radius: 9999px;
+                aspect-ratio: 1/1;
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
+            }
+            img{
+                width: 24px;
+            }
+        
+            .most-popular{
+                font-size: 14px;
+                padding: 4px 12px;
+                background: #303030;
+                border-radius: 9999px;
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
+            }
+        }
+        
+        .plan-advantages{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 24px 0;
+            position: relative;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                background: #303030;
+                border-radius: 9999px;
+                aspect-ratio: 1/1;
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
+            }
+        
+            img{
+                width: 20px;
+                height: 20px;
+                filter: contrast(0) grayscale(1) ;
+            }
+        
+            &::before, &::after{
+                content: "";
+                width: 100%;
+                left: 0px;
+                height: 1px;
+                position: absolute;
+                background: #303030;
+            }
+        
+            &::before{
+                top: 0px;
+            }
+        
+            &::after{
+                bottom: 0px;
+            }
+        }
+        
+        .plan-advantages-item{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        
+            .plan-advantages-item-text{
+                color: #8a8f98;
+                font-size: 12px;
+        
+                .plan-advantages-item-text-top{
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+        
+        .plan-title{
+            margin-top: 16px;
+        
+            .cost{
+                display: flex;
+                align-items: center;
+                position: relative;
+                height: 48px;
+                margin-bottom: 16px;
+            }
+        
+            h2{
+                font-size: 24px;
+                font-weight: 700;
+            }
+        
+            p{
+                color: #8a8f98;
+                font-size: 14px;
+                line-height: 150%;
+                margin-top: 8px;
+                margin-bottom: 16px;
+            }
+        }
+        
+        .plan-buy-button{
+            margin-top: 24px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            padding: 8px 0;
+            background: #303030;
+            transition: 0.3s ease;
+        
+            &:hover{
+                background: #505050;
+            }
+        }
+        
+        .popup-warn{
+            z-index: 1000;
+            position: fixed;
+            display: flex;
+            gap: 16px;
+            right: 32px;
+            bottom: 32px;
+            border-radius: 12px;
+            background: rgba(24, 24, 24, 0.5);
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
+            img{
+                width: 32px;
+                // background: #be3e53;
+            }
+        }
+        
+        .popup-warn-text{
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            color: #cbd5e1;
+        
+            span:first-child{
+                color: #be3e53;
+                font-weight: 600;
+            }
+        }
+
+        .subscription-total-cost{
+            font-size: 36px;
         }
     }
 
-    &:hover{
-        .circle{
-            opacity: 1;
+}
+
+@media screen and (max-width: 860px) {
+    .buy-rust{
+
+        .buy-cards-container{
+            grid-template-columns: repeat(1, 1fr);
+            max-width: 394px;
+
+            &:hover{
+                .circle{
+                    opacity: 0;
+                }
+            }
+        }
+
+        .buy-card-inner{
+
+            &:hover{
+                .inner-circle{
+                    opacity: 0;
+                }
+            }
         }
     }
-}
 
-.buy-card{
-    width: 100%;
-    position: relative;
-    display: flex;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.12);
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    opacity: 0;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
-    will-change: transform, animation, opacity;
-
-    .circle, .inner-circle{
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1200px;
-        height: 1200px;
-        background: radial-gradient(600px at center, rgb(255, 255, 255), transparent 60%);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .circle{
-        width: 800px;
-        height: 800px;
-        background: radial-gradient(400px at center, rgba(255, 255, 255, 0.8), transparent 60%);
+    .buy-rust{
+        margin-top: 140px;
     }
 }
 
-.buy-card-inner{
-    position: relative;
-    display: flex;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    background: rgb(19, 19, 21);
-    border-radius: 16px;
-    padding: 24px;
-    overflow: hidden;
-    flex-direction: column;
-
-    &:hover{
-        .inner-circle{
-            opacity: 0.06;
-        }
-    }
-}
-
-.plan-image{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    span{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px;
-        background: #303030;
-        border-radius: 9999px;
-        aspect-ratio: 1/1;
-        box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
-    }
-    img{
-        width: 24px;
-    }
-
-    .most-popular{
-        font-size: 14px;
-        padding: 4px 12px;
-        background: #303030;
-        border-radius: 9999px;
-        box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
-    }
-}
-
-.plan-advantages{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 24px 0;
-    position: relative;
-    span{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        background: #303030;
-        border-radius: 9999px;
-        aspect-ratio: 1/1;
-        box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
-    }
-
-    img{
-        width: 20px;
-        height: 20px;
-        filter: contrast(0) grayscale(1) ;
-    }
-
-    &::before, &::after{
-        content: "";
+@media screen and (max-width: 480px) {
+    .buy-top-content{
+        margin-bottom: 48px;
         width: 100%;
-        left: 0px;
-        height: 1px;
-        position: absolute;
-        background: #303030;
-    }
-
-    &::before{
-        top: 0px;
-    }
-
-    &::after{
-        bottom: 0px;
-    }
-}
-
-.plan-advantages-item{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    .plan-advantages-item-text{
-        color: #8a8f98;
-        font-size: 12px;
-
-        .plan-advantages-item-text-top{
-            color: #fff;
+    
+        h2{
+            font-size: 32px;
+        }
+    
+        &>p{
             font-size: 14px;
-            font-weight: 500;
+            margin-top: 12px;
+            margin-bottom: 24px;
+        }
+
+        .content-options{
+            width: 100%;
+            max-width: 394px;
         }
     }
-}
 
-.plan-title{
-    margin-top: 16px;
-
-    .cost{
-        display: flex;
-        align-items: center;
-        position: relative;
-        height: 48px;
-        margin-bottom: 16px;
-    }
-
-    h2{
-        font-size: 24px;
-        font-weight: 700;
-    }
-
-    p{
-        color: #8a8f98;
-        font-size: 14px;
-        line-height: 150%;
-        margin-top: 8px;
-        margin-bottom: 16px;
-    }
-}
-
-.plan-buy-button{
-    margin-top: 24px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    padding: 8px 0;
-    background: #303030;
-    transition: 0.3s ease;
-
-    &:hover{
-        background: #505050;
-    }
-}
-
-.popup-warn{
-    z-index: 1000;
-    position: fixed;
-    display: flex;
-    gap: 16px;
-    right: 32px;
-    bottom: 32px;
-    border-radius: 12px;
-    background: rgba(24, 24, 24, 0.5);
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(4px);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
-    img{
-        width: 32px;
-        // background: #be3e53;
-    }
-}
-
-.popup-warn-text{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: #cbd5e1;
-
-    span:first-child{
-        color: #be3e53;
-        font-weight: 600;
+    .buy-rust{
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 }

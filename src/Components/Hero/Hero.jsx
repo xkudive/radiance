@@ -102,9 +102,11 @@ export default function Hero() {
                         <p>{"Software".split("").map((e,i) => <span style={{animationDelay: `${i*0.05+0.4+0.75}s`}} key={`hero-title-${i+8}`}>{e}</span>)}</p>
                     </div>
                     <div className="hero-subtitle">
-                        <p>The best private cheat for Rust from cool developers.</p>
-                        <p>Discord server with responsive and fast support.</p>
-                        <p>Cheat features you've never seen before.</p>
+                        <div className="hero-subtitle-box">
+                            <p>The best private cheat for Rust from cool developers.</p>
+                            <p>Discord server with responsive and fast support.</p>
+                            <p>Cheat features you've never seen before.</p>
+                        </div>
 
                         <p>Welcome to Radiance!</p>
                     </div>

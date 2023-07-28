@@ -14,7 +14,7 @@ const App = () => {
 
   let location = useLocation();
 
-  let [device, setDevice] = React.useState(true);
+  // let [device, setDevice] = React.useState(true);
   // let [cursorPos, setCursorPos] = React.useState([500,500]);
 
   // React.useEffect(() => {
@@ -26,19 +26,19 @@ const App = () => {
   //   return () => document.body.removeEventListener("mousemove",cursorPosCalc)
   // }, []);
 
-    React.useEffect(() => { 
-        function deviceWidth() {
-            let width = document.body.clientWidth;
-            width > 860 ? setDevice(true) : setDevice(false)
-        }
-        deviceWidth()
-        window.addEventListener("resize", deviceWidth)
-        return () => document.body.removeEventListener("mousemove", deviceWidth)
-    })
+    // React.useEffect(() => { 
+    //     function deviceWidth() {
+    //         let width = document.body.clientWidth;
+    //         width > 860 ? setDevice(true) : setDevice(false)
+    //     }
+    //     deviceWidth()
+    //     window.addEventListener("resize", deviceWidth)
+    //     return () => document.body.removeEventListener("mousemove", deviceWidth)
+    // })
 
   return (
-    device ? 
-      <div>
+    // device ? 
+      <>
         <Navbar />
           {/* <div class="background-radial-blur"></div>
           <div className="screen-box">
@@ -55,16 +55,16 @@ const App = () => {
           </Routes>
         </AnimatePresence>
         <Footer />
-      </div>
+      </>
 
-    :
+    // :
 
-    <div className="mobile-device">
-        <div className="mobile-text">
-          <p>WHOOPS! IT LOOKS LIKE YOU'RE ON A MOBILE DEVICE. THE SITE IS DESIGNED TO WORK ITS MAGIC ONLY ON DESKTOP DEVICE, AT THIS POINT.</p>
-          <p>NO HARD FEELINGS, JUST SWITCH OVER FOR BETTER EXPERIENCE.</p>
-        </div>
-    </div>
+    // <div className="mobile-device">
+    //     <div className="mobile-text">
+    //       <p>WHOOPS! IT LOOKS LIKE YOU'RE ON A MOBILE DEVICE. THE SITE IS DESIGNED TO WORK ITS MAGIC ONLY ON DESKTOP DEVICE, AT THIS POINT.</p>
+    //       <p>NO HARD FEELINGS, JUST SWITCH OVER FOR BETTER EXPERIENCE.</p>
+    //     </div>
+    // </div>
   )
 }
 

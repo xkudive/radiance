@@ -7,6 +7,10 @@
         position: relative;
         max-width: 100%;
 
+        .navbar-backdrop{
+            background: rgba(0, 0, 0, 0.6);
+        }
+
         & > .box-gradient{
             opacity: 0;
             
@@ -148,7 +152,8 @@
 
 .media-slider-indicator{
     opacity: 0;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 6px;
     border-radius: 9999px;
     overflow: hidden;
@@ -156,7 +161,6 @@
 }
 
 .media-slider-indicator-inner{
-    width: 200px;
     height: 6px;
     border-radius: 9999px;
     background: #dca865;
@@ -179,15 +183,15 @@
     translate:0 -50%;
     cursor: pointer;
     user-select: none;
+    z-index: 1;
 
-    path{
-        transition: 0.3s ease;
+    img{
+        width: 100%;
     }
+
     
     &:hover{
-        path{
-            fill: #888888;
-        }
+        filter: contrast(0.3);
     }
     
     &.gallery-button-left{
@@ -209,14 +213,20 @@
 }
 
 .galley-image-box{
-    height: 640px;
-    max-height: 80%;
+    width: calc(100% - 48px);
+    max-width: 560px;
+    aspect-ratio: 789 / 754;
+    overflow: hidden;
+
     display: flex;
     user-select: none;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     img{
-        object-fit: cover;
-        user-select: none;     
+        object-fit: contain;
+        width: 100%;
+        user-select: none;    
         border-radius: 16px;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;   
     }
@@ -246,4 +256,39 @@
     top: 36px;
     right: 24px;
     display: flex;
+}
+
+@media screen and (max-width: 860px) {
+
+    .gallery-button{
+        width: 36px;
+    }
+}
+@media screen and (max-width: 590px) {
+    .media-rust-title{
+        font-size: 32px;
+        margin-bottom: 48px;
+    }
+    .media-slider-indicator-container{
+        margin-top: 48px;
+    }
+    .media-rust-image{
+        width: 320px;
+        height: 180px;
+    
+        &:last-child{
+            width: 304px;
+        }
+    }
+
+    .gallery-button{
+        display: flex;
+        width: 32px;
+        position: absolute;
+        top: calc(100% - 32px - 32px);
+        translate:0 0;
+        cursor: pointer;
+        user-select: none;
+        z-index: 1;
+    }
 }

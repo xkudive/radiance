@@ -148,7 +148,7 @@ li{
 }
 
 .slideIn, .slideOut{
-	z-index: 1001;
+	z-index: 1111;
 	top: 0;
 	left: 0;
 	position: fixed;
@@ -164,8 +164,4 @@ li{
 	width: 240px;
 	pointer-events: none;
 	user-select: none;
-}
-
-.rustPage .buy{
-	margin-top: 160px;
 }

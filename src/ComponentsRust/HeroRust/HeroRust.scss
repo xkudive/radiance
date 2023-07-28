@@ -185,3 +185,55 @@
         }
     }
 }
+
+@media screen and (max-width: 590px){
+    .hero-rust{
+        padding-top: 64px;
+    }
+
+    .hero-rust-left-title{
+        width: 100%;
+    }
+
+    .hero-rust-left-top{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    
+        img{
+            width: 48px;
+            border-radius: 8px;
+        }
+    }
+
+    .hero-rust-left-title-text{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        span{
+            font-size: 14px;
+            line-height: 90%;
+        }
+        h2{
+            font-size: 24px;
+            line-height: 90%;
+        }
+    }
+
+    .hero-rust-left-subtitle{
+        font-size: 14px;
+    }
+
+    .requirements-box{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 361px){
+
+    .hero-rust-left-title-text{
+        h2{
+            font-size: 19px;
+            line-height: 90%;
+        }
+    }
+}

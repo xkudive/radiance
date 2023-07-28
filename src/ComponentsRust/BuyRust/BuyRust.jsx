@@ -3,7 +3,7 @@ import {motion, AnimatePresence} from "framer-motion"
 
 import Backdrop from "../../Components/Navbar/modals/Backdrop";
 import BuyCard from "./Modal/BuyCard";
-import "./BuyRust.scss";
+import "../../Components/Buy/Buy.scss";
 
 import diamond from "../../images/diamond.svg";
 import support from "../../images/support.svg";
@@ -52,7 +52,7 @@ export default function Buy({newRender}) {
                     observer.unobserve(entry.target);
                 }
             })  
-        }, {threshold: 0.3})
+        }, {threshold: 0.1})
     
         observer.observe(buyRef.current);
     }, [])
@@ -64,7 +64,7 @@ export default function Buy({newRender}) {
                     <h2>Subscription</h2>
                     <p>Select the desired subscription period</p>
                     <div className="modal-content region">
-                        <div className="content-options" style={{width: "400px"}}>
+                        <div className="content-options">
                             <span className={activeTabRegion === 0 ? "active" : ""} onClick={() => setActiveTabRegion(0)}>Global Region</span>
                             <span className={activeTabRegion === 1 ? "active" : ""} onClick={() => setActiveTabRegion(1)}>CIS Region</span>
 

@@ -89,7 +89,7 @@
 
     &:hover{
         .circle{
-            opacity: 1;
+            opacity: 0.75;
         }
     }
 }
@@ -117,12 +117,6 @@
         background: radial-gradient(600px at center, rgb(255, 255, 255), transparent 60%);
         opacity: 0;
         transition: opacity 0.5s ease;
-    }
-
-    .circle{
-        width: 800px;
-        height: 800px;
-        background: radial-gradient(400px at center, rgba(255, 255, 255, 0.8), transparent 60%);
     }
 }
 
@@ -328,6 +322,26 @@
     }
 }
 
+@media screen and (max-width: 560px) {
+    .popup-warn{
+        max-width: calc(100% - 40px);
+        gap: 12px;
+        right: 24px;
+        bottom: 32px;
+        font-size: 12px;
+        padding: 12px 10px;
+
+        img{
+            width: 24px;
+        }
+    }
+
+    .popup-warn-text{
+        display: flex;
+        gap: 4px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .buy-top-content{
         margin-bottom: 48px;
@@ -352,5 +366,14 @@
     .buy{
         margin-top: 100px;
         margin-bottom: 100px;
+    }
+}
+@media screen and (max-width: 389px) {
+    .popup-warn-text{
+        display: block;
+
+        span:first-child{
+            margin-right: 6px;
+        }
     }
 }

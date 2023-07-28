@@ -165,3 +165,9 @@ li{
 	pointer-events: none;
 	user-select: none;
 }
+
+@media screen and (max-width:860px){
+	.slideIn img, .slideOut img{
+	  	width: 160px;
+	}
+}

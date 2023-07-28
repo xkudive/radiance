@@ -291,7 +291,7 @@ export default function Buy({newRender}) {
                         >
                             <img src={block} alt="" />
                             <div className="popup-warn-text">
-                                <span>You have not accepted the offer agreement</span>
+                                <span>You have not accepted the offer agreement.</span>
                                 <span>Read the offer agreement and please accept it.</span>
                             </div>
                         </motion.div>

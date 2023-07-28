@@ -32,7 +32,7 @@ export default function BuyCard({ children, cursorPos, animationId}) {
             onMouseOver={(e) => cursorCalc(e)}
             ref={ref}
         >
-            <div className="circle" style={{transform: `translateX(${cursorPos[0]-boxPos[0]-400}px) translateY(${cursorPos[1]-boxPos[1]-400}px) translateZ(0px)`}}></div>
+            <div className="circle" style={{transform: `translateX(${cursorPos[0]-boxPos[0]-600}px) translateY(${cursorPos[1]-boxPos[1]-600}px) translateZ(0px)`}}></div>
             <div className="buy-card-inner">
                 <div className="inner-circle" style={{transform: `translateX(${mousePos[0]-600}px) translateY(${mousePos[1]-600}px) translateZ(0px)`}}></div>
                 {children}

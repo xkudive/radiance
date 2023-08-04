@@ -4,7 +4,21 @@
     .container{
         display: flex;
         flex-direction: column;
-        align-items: center;
+
+        .media-rust-slider{
+            border-radius: 0px;
+            width: 100%;
+        }
+
+        .media-rust-inner-slider{
+            gap: 16px;
+        }
+
+        .agreement-rules {
+            & > span{
+                cursor: pointer;
+            }
+        }
 
         &.active{
             .buy-top-content{
@@ -19,14 +33,26 @@
                 .buy-card{
                     animation: textReveal 0.8s cubic-bezier(0.27,0.94,0.48,1.01) forwards;
                 }
-                .buy-card:nth-child(2){
+                .buy-card:nth-child(1){
                     animation-delay: 1.15s;
                 }
-                .buy-card:nth-child(3){
+                .buy-card:nth-child(2){
                     animation-delay: 1.3s;
                 }
-                .buy-card:nth-child(4){
+                .buy-card:nth-child(3){
                     animation-delay: 1.45s;
+                }
+                .buy-card:nth-child(4){
+                    animation-delay: 1.6s;
+                }
+
+            }
+
+            .media-slider-indicator{
+                animation: fadeIn 0.5s 1.6s ease forwards;
+
+                .media-slider-indicator-inner{
+                    background: rgb(45, 189, 177);
                 }
             }
         }
@@ -67,15 +93,16 @@
         position: relative;
         width: 400px;
         border-radius: 8px;
+        align-self: center;
         background: rgb(23, 23, 23);
     }
 }
 
 .buy-cards-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     position: relative;
     gap: 16px;
+    width: 100%;
 
     .box-gradient{
         opacity: 0;
@@ -92,10 +119,14 @@
             opacity: 0.75;
         }
     }
+    
+    .buy-card:last-child{
+        grid-column: 2;
+    }
 }
 
 .buy-card{
-    max-width: 100%;
+    width: 392px;
     position: relative;
     display: flex;
     border-radius: 16px;
@@ -298,8 +329,6 @@
 @media screen and (max-width: 860px) {
 
     .buy-cards-container{
-        grid-template-columns: repeat(1, 1fr);
-        max-width: 394px;
 
         &:hover{
             .circle{

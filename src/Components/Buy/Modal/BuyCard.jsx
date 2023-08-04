@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"
 
-export default function BuyCard({ children, cursorPos, animationId}) {
+export default function BuyCard({ children, cursorPos, animationId, scrolledPos}) {
 
     let [boxPos, setBoxPos] = React.useState([0, 0, 0]);
     let [mousePos, setMousePos] = React.useState([0, 0]);
@@ -10,6 +10,7 @@ export default function BuyCard({ children, cursorPos, animationId}) {
 
     React.useEffect(() => {
         function boxPosCalc() {
+            if(!ref.current) return
             let rect = ref.current.getBoundingClientRect();
             setBoxPos([rect.left, rect.top + window.pageYOffset, ref.current.offsetWidth])
         }
@@ -32,9 +33,9 @@ export default function BuyCard({ children, cursorPos, animationId}) {
             onMouseOver={(e) => cursorCalc(e)}
             ref={ref}
         >
-            <div className="circle" style={{transform: `translateX(${cursorPos[0]-boxPos[0]-600}px) translateY(${cursorPos[1]-boxPos[1]-600}px) translateZ(0px)`}}></div>
+            <div className="circle" style={{transform: `translateX(${cursorPos[0]-boxPos[0]-600-scrolledPos}px) translateY(${cursorPos[1]-boxPos[1]-600}px) translateZ(0px)`}}></div>
             <div className="buy-card-inner">
-                <div className="inner-circle" style={{transform: `translateX(${mousePos[0]-600}px) translateY(${mousePos[1]-600}px) translateZ(0px)`}}></div>
+                <div className="inner-circle" style={{transform: `translateX(${mousePos[0]-600-scrolledPos}px) translateY(${mousePos[1]-600}px) translateZ(0px)`}}></div>
                 {children}
             </div>
         </motion.div>

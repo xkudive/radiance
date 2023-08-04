@@ -106,6 +106,10 @@
                 height: 800px;
                 background: radial-gradient(400px at center, rgba(255, 255, 255, 0.8), transparent 60%);
             }
+
+            &:nth-child(4){
+                display: none;
+            }
         }
         
         .buy-card-inner{

@@ -10,6 +10,7 @@ import quality from "../../images/premium_quality.svg";
 import lightning from "../../images/lightning.svg";
 import cube from "../../images/cube.svg";
 import star from "../../images/star.svg";
+import rocket from "../../images/rocket.png";
 
 export default function Buy() {
 
@@ -115,7 +116,7 @@ export default function Buy() {
                             >
                                 <BuyCard cursorPos={mousePos} scrolledPos={scrollProgress.current}>
                                     <div className="plan-image">
-                                        <span><img src={star} alt="" /></span>
+                                        <span><img src={rocket} alt="" /></span>
                                     </div>
                                     <div className="plan-title">
                                         <h2>Beginner</h2>

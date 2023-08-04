@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/radiance/static/css/main.27a2f925.css",
-    "main.js": "/radiance/static/js/main.b8c9baa9.js",
+    "main.js": "/radiance/static/js/main.5dd94a05.js",
     "static/media/otkis.gif": "/radiance/static/media/otkis.38f6129a628cc1c8d6fd.gif",
     "static/media/hero_glow.webp": "/radiance/static/media/hero_glow.c87a1fc3feb9c8556d6a.webp",
     "static/media/mama.png": "/radiance/static/media/mama.2a539e1fe246c6caee09.png",
@@ -31,10 +31,10 @@
     "static/media/lightning.svg": "/radiance/static/media/lightning.f771e92404956adfb4fbafbd1529896e.svg",
     "static/media/arrow.svg": "/radiance/static/media/arrow.b28063c595d5ad781c8d0f622694a7b9.svg",
     "main.27a2f925.css.map": "/radiance/static/css/main.27a2f925.css.map",
-    "main.b8c9baa9.js.map": "/radiance/static/js/main.b8c9baa9.js.map"
+    "main.5dd94a05.js.map": "/radiance/static/js/main.5dd94a05.js.map"
   },
   "entrypoints": [
     "static/css/main.27a2f925.css",
-    "static/js/main.b8c9baa9.js"
+    "static/js/main.5dd94a05.js"
   ]
 }

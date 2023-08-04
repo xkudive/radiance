@@ -116,7 +116,7 @@ export default function Buy() {
                             >
                                 <BuyCard cursorPos={mousePos} scrolledPos={scrollProgress.current}>
                                     <div className="plan-image">
-                                        <span><img src={rocket} alt="" /></span>
+                                        <span><img src={rocket} alt="" style={{filter: "invert(1)"}}/></span>
                                     </div>
                                     <div className="plan-title">
                                         <h2>Beginner</h2>

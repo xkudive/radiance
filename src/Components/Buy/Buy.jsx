@@ -222,7 +222,7 @@ export default function Buy() {
                                                 exit={{opacity: 0, transition:{duration: 0.2}}}
                                                 key={[activeTabRegion]}>
                                                     {
-                                                        activeTabRegion === 0 ? <div><span>50$</span><span>/week</span></div> : <div><span>4100₽</span><span>/week</span></div>
+                                                        activeTabRegion === 0 ? <div><span>50$</span><span>/week</span></div> : <div><span>4500₽</span><span>/week</span></div>
                                                     }
                                                 </motion.span>
                                             </AnimatePresence>
@@ -268,7 +268,7 @@ export default function Buy() {
                                                 exit={{opacity: 0, transition:{duration: 0.2}}}
                                                 key={[activeTabRegion]}>
                                                     {
-                                                        activeTabRegion === 0 ?  <div><span>105$</span><span>/month</span></div> : <div><span>9100₽</span><span>/month</span></div>
+                                                        activeTabRegion === 0 ?  <div><span>105$</span><span>/month</span></div> : <div><span>9400₽</span><span>/month</span></div>
                                                     }
                                                 </motion.span>
                                             </AnimatePresence>

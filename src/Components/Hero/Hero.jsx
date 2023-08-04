@@ -47,8 +47,9 @@ export default function Hero() {
 
     function indicatorCalc() {
         if(subscription === 0) return "4px";
-        if(subscription === 1) return "calc(100% / 3)";
-        if(subscription === 2) return "calc(100% / 3 * 2)";
+        if(subscription === 1) return "calc(100% / 4)";
+        if(subscription === 2) return "calc(100% / 4 * 2)";
+        if(subscription === 3) return "calc(100% / 4 * 3)";
     }
 
     return(
@@ -224,9 +225,10 @@ export default function Hero() {
                             <div className="main-menu-content subscription">
                                 <span className="main-menu-title">Subscription</span>
                                 <div className="content-options tariff">
-                                    <span className={subscription === 0 ? "active" : ""} onClick={() => setSubscription(0)}>3 days</span>
-                                    <span className={subscription === 1 ? "active" : ""} onClick={() => setSubscription(1)}>7 days</span>
-                                    <span className={subscription === 2 ? "active" : ""} onClick={() => setSubscription(2)}>30 days</span>
+                                    <span className={subscription === 0 ? "active" : ""} onClick={() => setSubscription(0)}>1 day</span>
+                                    <span className={subscription === 1 ? "active" : ""} onClick={() => setSubscription(1)}>3 days</span>
+                                    <span className={subscription === 2 ? "active" : ""} onClick={() => setSubscription(2)}>7 days</span>
+                                    <span className={subscription === 3 ? "active" : ""} onClick={() => setSubscription(3)}>30 days</span>
 
                                     <div className="active-indicator" style={{left: `${indicatorCalc()}`}}></div>
                                 </div>

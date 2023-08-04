@@ -128,11 +128,11 @@
     &.tariff{
         .content-options{
             span{
-                width: calc(100% / 3);
+                width: calc(100% / 4);
             }
         
             .active-indicator{
-                width: calc(100% / 3 - 4px);
+                width: calc(100% / 4 - 4px);
             }
         }
     }

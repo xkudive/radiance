@@ -84,20 +84,23 @@ export default function Navbar() {
 
     function indicatorCalc() {
         if(activeTabTariff === 0) return "4px";
-        if(activeTabTariff === 1) return "calc(100% / 3)";
-        if(activeTabTariff === 2) return "calc(100% / 3 * 2)";
+        if(activeTabTariff === 1) return "calc(100% / 4)";
+        if(activeTabTariff === 2) return "calc(100% / 4 * 2)";
+        if(activeTabTariff === 3) return "calc(100% / 4 * 3)";
     }
 
     function engTariff() {
-        if(activeTabTariff === 0) return <div><span>25$</span><span>/3 days</span></div>
-        if(activeTabTariff === 1) return <div><span>50$</span><span>/week</span></div>
-        if(activeTabTariff === 2) return <div><span>105$</span><span>/month</span></div>
+        if(activeTabTariff === 0) return <div><span>12$</span><span>/1 day</span></div>
+        if(activeTabTariff === 1) return <div><span>25$</span><span>/3 days</span></div>
+        if(activeTabTariff === 2) return <div><span>50$</span><span>/week</span></div>
+        if(activeTabTariff === 3) return <div><span>105$</span><span>/month</span></div>
     }
 
     function rusTariff() {
-        if(activeTabTariff === 0) return <div><span>2200₽</span><span>/3 days</span></div>
-        if(activeTabTariff === 1) return <div><span>4100₽</span><span>/week</span></div>
-        if(activeTabTariff === 2) return <div><span>9100₽</span><span>/month</span></div>
+        if(activeTabTariff === 0) return <div><span>1100₽</span><span>/1 day</span></div>
+        if(activeTabTariff === 1) return <div><span>2200₽</span><span>/3 days</span></div>
+        if(activeTabTariff === 2) return <div><span>4500₽</span><span>/week</span></div>
+        if(activeTabTariff === 3) return <div><span>9400₽</span><span>/month</span></div>
     }
     
     const linkStagger = {
@@ -203,9 +206,10 @@ export default function Navbar() {
                                         <div className="modal-content tariff">
                                             <span className="modal-content-title">Tariff</span>
                                             <div className="content-options">
-                                                <span className={activeTabTariff === 0 ? "active" : ""} onClick={() => setActiveTabTariff(0)}>3 days</span>
-                                                <span className={activeTabTariff === 1 ? "active" : ""} onClick={() => setActiveTabTariff(1)}>7 days</span>
-                                                <span className={activeTabTariff === 2 ? "active" : ""} onClick={() => setActiveTabTariff(2)}>30 days</span>
+                                                <span className={activeTabTariff === 0 ? "active" : ""} onClick={() => setActiveTabTariff(0)}>1 day</span>
+                                                <span className={activeTabTariff === 1 ? "active" : ""} onClick={() => setActiveTabTariff(1)}>3 days</span>
+                                                <span className={activeTabTariff === 2 ? "active" : ""} onClick={() => setActiveTabTariff(2)}>7 days</span>
+                                                <span className={activeTabTariff === 3 ? "active" : ""} onClick={() => setActiveTabTariff(3)}>30 days</span>
 
                                                 <div className="active-indicator" style={{left: `${indicatorCalc()}`}}></div>
                                             </div>
